@@ -1,5 +1,14 @@
 # RS School REST service
 
+# *Инструкция*
+
+ Полезыные ссылки
+ + [Задание](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/rest-service.md)
+ + [Критерии проверки](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/rest-service.md)
+ + [Моя самопроверка](#self-test)
+ + 06.12.2021	23:59 / 06.12.2021	23:59	
+
+
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
@@ -70,3 +79,22 @@ npm run lint
 Press <kbd>F5</kbd> to debug.
 
 For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+
+<a id="self-test"></a>
+
+
+# Самопроверка #
+Ваша оценка - 190 баллов 
+Отзыв по пунктам ТЗ:
+Не выполненные/не засчитанные пункты:
+1) По плюс 10 баллов за каждый успешно пройденный тест при запуске npm run test. Здесь только отметить, что такие тесты есть, сумму нужно посчитать вручную. 
+Отзыв: +90 баллов
+Выполненные пункты:
+1) Код приложения, работающий с сущностью user разделен по модулям в соответствии с его назначением (к примеру: работа с запросом и ответом в *.router.js, бизнес-логика в *.service.js, работа с хранилищем данных в *.repository.js и т.п.) 
+
+2) Код приложения, работающий с сущностью board разделен по модулям в соответствии с его назначением (к примеру: работа с запросом и ответом в *.router.js, бизнес-логика в *.service.js, работа с хранилищем данных в *.repository.js и т.п.) 
+
+3) Код приложения, работающий с сущностью task разделен по модулям в соответствии с его назначением (к примеру: работа с запросом и ответом в *.router.js, бизнес-логика в *.service.js, работа с хранилищем данных в *.repository.js и т.п.) 
+
+4) REST сервис построен на базе фреймворка/библиотеки, отличной от Express и Nest.js, либо на чистом Node.js плюс 100 баллов 
+
