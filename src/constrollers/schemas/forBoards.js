@@ -2,7 +2,6 @@ const str = {type: 'string'};
 const num = {type: 'number'};
 const Column = {
     type: 'object',
-    required: ['title', 'order'],
     properties: {
         title: str,
         order: str,
