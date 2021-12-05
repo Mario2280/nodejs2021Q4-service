@@ -15,7 +15,7 @@ const board = {
         columns: {type: 'array', items: Column},
         password: str
     }
-}
+};
 
 const getBoardsSchema = {
     response: {

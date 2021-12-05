@@ -19,8 +19,10 @@ const getUser = (id) => {
 };
 
 const postUser = (name, login, password) => {
-    Users.push(new User({name, login, password}));
-    return {message: `User created`};
+    const res = new User(name, login, password);
+    Users.push(res);
+    
+    return User.toResponse(res);
 };
 
 const putUser = (name, login, password, id) => {
@@ -29,7 +31,7 @@ const putUser = (name, login, password, id) => {
         Users[res].name = name;
         Users[res].login = login;
         Users[res].password = password;
-        return {message: `User ${Users[res].id} updated`};
+        return Users[res];
     } 
         return {message: "User not found"};
     
@@ -102,8 +104,9 @@ const getBoard = (id) => {
 };
 
 const postBoard = (title, order, columns) => {
-    Boards.push(new Board(title, order, columns));
-    return {message: `Board created`};
+    const res = new Board(title, order, columns);
+    Boards.push(res);
+    return res;
 };
 
 const putBoard = (title, order, columns, id) => {

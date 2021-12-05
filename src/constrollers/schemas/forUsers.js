@@ -1,13 +1,12 @@
 const str = {type: 'string'};
-const num = {type: 'number'};
+// const num = {type: 'number'};
 const user = {
     type: 'object',
-    // хз
-    // required: ['name', 'login', 'password'],
     properties: {
         name: str,
         login: str,
-        password: str
+        password: str,
+        id:str
     }
 }
 
@@ -22,7 +21,7 @@ const getUsersSchema = {
 
 const getUserSchema = {
     params: {
-        userId: num,
+        userId: str,
     },
     response: {
         200: user
@@ -34,17 +33,24 @@ const postUserSchema = {
         user
     },
     response: {
-        200: str,
+        201: user,
     }
 };
 
 const putUserSchema = {
     body: user,
     params: {
-        userId: num,
+        userId: str,
     },
     response: {
-        200: str
+        200: {
+            type: 'object',
+            properties: {
+                name: str,
+                login: str,
+                id: str
+            }
+        }
     }
 };
 

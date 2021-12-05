@@ -9,10 +9,14 @@ const {
 
 const boardPost = (req, res) => {
     const {body} = req;
+    res.header('Content-Type', 'application/json');
+    res.status(201);
     res.send(postBoard(body.title, body.order, body.columns));
 }
 
 const boardGet = (req, res) => {
+    res.header('Content-Type', 'application/json');
+    res.status(200);
     res.send(getBoard(req.params.boardId));
 }
 
