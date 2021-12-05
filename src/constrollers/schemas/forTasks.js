@@ -3,7 +3,7 @@ const num = {type: 'number'};
 
 const task = {
     type: 'object',
-    required: ['title', 'order', 'description', 'userId', 'boardId', 'columnId'],
+    // required: ['title', 'order', 'description', 'userId', 'boardId', 'columnId'],
     properties: {
         title: str,
         order: str,
