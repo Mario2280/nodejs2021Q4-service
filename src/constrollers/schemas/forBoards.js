@@ -1,55 +1,61 @@
-const str = {type: 'string'};
-const num = {type: 'number'};
+const str = { type: 'string' };
+const num = { type: 'number' };
 const Column = {
-    type: 'object',
-    properties: {
-        title: str,
-        order: num,
-    }
+  type: 'object',
+  properties: {
+    title: str,
+    order: num,
+  },
 };
 const board = {
-    type: 'object',
-    required: ['title'],
-    properties: {
-        title: str,
-        columns: {type: 'array', items: Column},
-        id:str,
-        password: str
-    }
+  type: 'object',
+  required: ['title'],
+  properties: {
+    title: str,
+    columns: { type: 'array', items: Column },
+    id: str,
+    password: str,
+  },
 };
 
 const getBoardsSchema = {
-    // response: {
-    //     200: {
-    //         type: 'array',
-    //         items: board
-    //     }
-    // }
+  // response: {
+  //     200: {
+  //         type: 'array',
+  //         items: board
+  //     }
+  // }
 };
 
 const getBoardSchema = {
-    params: {
-        boardId: str,
-    },
+  params: {
+    boardId: str,
+  },
 };
 
 const postBoardSchema = {
-    body: {
-        board
-    },
+  body: {
+    board,
+  },
 };
 
 const putBoardSchema = {
-    body: board,
-    params: {
-        boardId: str,
-    },
+  body: board,
+  params: {
+    boardId: str,
+  },
 };
 
 const deleteBoardSchema = {
-    params: {
-        boardId: str
-    },
+  params: {
+    boardId: str,
+  },
 };
 
-module.exports = () => ({getBoardsSchema, getBoardSchema, postBoardSchema, putBoardSchema, deleteBoardSchema});
+module.exports = () => ({
+  getBoardsSchema,
+  getBoardSchema,
+  postBoardSchema,
+  putBoardSchema,
+  deleteBoardSchema,
+});

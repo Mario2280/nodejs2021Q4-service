@@ -1,70 +1,72 @@
-const str = {type: 'string'};
+const str = { type: 'string' };
 // const num = {type: 'number'};
 const user = {
-    type: 'object',
-    properties: {
-        name: str,
-        login: str,
-        password: str,
-        id:str
-    }
-}
+  type: 'object',
+  properties: {
+    name: str,
+    login: str,
+    password: str,
+    id: str,
+  },
+};
 
 const getUsersSchema = {
-    response: {
-        200: {
-            type: 'array',
-            items: user
-        }
-    }
+  response: {
+    200: {
+      type: 'array',
+      items: user,
+    },
+  },
 };
 
 const getUserSchema = {
-    params: {
-        userId: str,
-    },
-    response: {
-        200: user
-    }
+  params: {
+    userId: str,
+  },
+  response: {
+    200: user,
+  },
 };
 
 const postUserSchema = {
-    body: {
-        user
-    },
-    response: {
-        201: user,
-    }
+  body: {
+    user,
+  },
+  response: {
+    201: user,
+  },
 };
 
 const putUserSchema = {
-    body: user,
-    params: {
-        userId: str,
+  body: user,
+  params: {
+    userId: str,
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        name: str,
+        login: str,
+        id: str,
+      },
     },
-    response: {
-        200: {
-            type: 'object',
-            properties: {
-                name: str,
-                login: str,
-                id: str
-            }
-        }
-    }
+  },
 };
 
 const deleteUserSchema = {
-    params: {
-        userId: str
-    },
-    response: {
-        200: str,
-    }
+  params: {
+    userId: str,
+  },
+  response: {
+    200: str,
+  },
 };
 
-module.exports = () => ({getUsersSchema, getUserSchema, postUserSchema, putUserSchema, deleteUserSchema});
-
-
-
-
+module.exports = () => ({
+  getUsersSchema,
+  getUserSchema,
+  postUserSchema,
+  putUserSchema,
+  deleteUserSchema,
+});

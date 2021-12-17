@@ -1,7 +1,4 @@
-// const fatisfy = require("fastify");
-
-const app = require("fastify")({ logger: true});
-
+const app = require('fastify')({ logger: true });
 
 app.register(require('./router/router'));
 

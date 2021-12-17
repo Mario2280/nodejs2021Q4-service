@@ -1,137 +1,41 @@
-const boardHandler = require("../constrollers/handlers/forBoards");
-const taskHandler = require("../constrollers/handlers/forTasks");
-const userHandler = require("../constrollers/handlers/forUsers");
+const user = require('./userRouter');
 
+const task = require('./taskRouter');
 
-const boardSchema = require("../constrollers/schemas/forBoards");
-const taskSchema = require("../constrollers/schemas/forTasks");
-const userSchema = require("../constrollers/schemas/forUsers");
-
-
-const getUsersOpt = {
-    schema: userSchema().getUsersSchema,
-    handler: userHandler().userGetAll
-};
-
-const getUserOpt = {
-    schema: userSchema().getUserSchema,
-    handler: userHandler().userGet
-};
-
-const postUserOpt = {
-    schema: userSchema().postUserSchema,
-    handler: userHandler().userPost
-};
-
-const putUserOpt = {
-    schema: userSchema().putUserSchema,
-    handler: userHandler().userPut
-};
-
-const deleteUserOpt = {
-    schema: userSchema().deleteUserSchema,
-    handler: userHandler().userDelete
-};
-
-
-const getTasksOpt = {
-    schema: taskSchema().getTasksSchema,
-    handler: taskHandler().taskGetAll
-};
-
-const getTaskOpt = {
-    schema: taskSchema().getTaskSchema,
-    handler: taskHandler().taskGet
-};
-
-const postTaskOpt = {
-    schema: taskSchema().postTaskSchema,
-    handler: taskHandler().taskPost
-};
-
-const putTaskOpt = {
-    schema: taskSchema().putTaskSchema,
-    handler: taskHandler().taskPut
-};
-
-const deleteTaskOpt = {
-    schema: taskSchema().deleteTaskSchema,
-    handler: taskHandler().taskDelete
-};
-
-
-const getBoardsOpt = {
-    schema: taskSchema().getBoardsSchema,
-    handler: boardHandler().boardGetAll
-};
-
-const getBoardOpt = {
-    schema: boardSchema().getBoardSchema,
-    handler: boardHandler().boardGet
-};
-
-const postBoardOpt = {
-    schema: boardSchema().postBoardSchema,
-    handler: boardHandler().boardPost
-};
-
-const putBoardOpt = {
-    schema: boardSchema().putBoardSchema,
-    handler: boardHandler().boardPut
-};
-
-const deleteBoardOpt = {
-    schema: boardSchema().deleteBoardSchema,
-    handler: boardHandler().boardDelete
-};
-
+const board = require('./boardRouter');
 
 const Routes = (fastify, opts, done) => {
+  fastify.get('/users', user.getUsersOpt);
 
+  fastify.get('/users/:userId', user.getUserOpt);
 
-    fastify.get('/users', getUsersOpt);
+  fastify.post('/users', user.postUserOpt);
 
-    fastify.get('/users/:userId', getUserOpt);
+  fastify.put('/users/:userId', user.putUserOpt);
 
-    fastify.post('/users', postUserOpt);
+  fastify.delete('/users/:userId', user.deleteUserOpt);
 
-    fastify.put('/users/:userId', putUserOpt);
+  fastify.get('/boards', board.getBoardsOpt);
 
-    fastify.delete('/users/:userId', deleteUserOpt);
+  fastify.get('/boards/:boardId', board.getBoardOpt);
 
+  fastify.post('/boards', board.postBoardOpt);
 
+  fastify.put('/boards/:boardId', board.putBoardOpt);
 
+  fastify.delete('/boards/:boardId', board.deleteBoardOpt);
 
-    fastify.get('/boards', getBoardsOpt);
+  fastify.get('/boards/:boardId/tasks', task.getTasksOpt);
 
-    fastify.get('/boards/:boardId', getBoardOpt);
+  fastify.get('/boards/:boardId/tasks/:taskId', task.getTaskOpt);
 
-    fastify.post('/boards', postBoardOpt);
+  fastify.post('/boards/:boardId/tasks', task.postTaskOpt);
 
-    fastify.put('/boards/:boardId', putBoardOpt);
+  fastify.put('/boards/:boardId/tasks/:taskId', task.putTaskOpt);
 
-    fastify.delete('/boards/:boardId', deleteBoardOpt);
+  fastify.delete('/boards/:boardId/tasks/:taskId', task.deleteTaskOpt);
 
-
-
-    fastify.get('/boards/:boardId/tasks', getTasksOpt);
-
-    fastify.get('/boards/:boardId/tasks/:taskId', getTaskOpt);
-
-    fastify.post('/boards/:boardId/tasks', postTaskOpt);
-
-    fastify.put('/boards/:boardId/tasks/:taskId', putTaskOpt);
-
-    fastify.delete('/boards/:boardId/tasks/:taskId', deleteTaskOpt);
-
-
-    done();
-
+  done();
 };
 
-
 module.exports = Routes;
-
-
-
-

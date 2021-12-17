@@ -1,51 +1,57 @@
-const str = {type: 'string'};
-const num = {type: 'number'};
+const str = { type: 'string' };
+const num = { type: 'number' };
 
 const task = {
-    type: 'object',
-    // required: ['title', 'order', 'description', 'userId', 'boardId', 'columnId'],
-    properties: {
-        title: str,
-        order: num,
-        description: str,
-        userId: str,
-        boardId: str,
-        columnId: str
-    }
-}
+  type: 'object',
+  // required: ['title', 'order', 'description', 'userId', 'boardId', 'columnId'],
+  properties: {
+    title: str,
+    order: num,
+    description: str,
+    userId: str,
+    boardId: str,
+    columnId: str,
+  },
+};
 
 const getTasksSchema = {
-    // response: {
-    //     200: {
-    //         type: 'array',
-    //         items: task
-    //     }
-    // }
+  // response: {
+  //     200: {
+  //         type: 'array',
+  //         items: task
+  //     }
+  // }
 };
 
 const getTaskSchema = {
-    params: {
-        taskId: str,
-    },
+  params: {
+    taskId: str,
+  },
 };
 
 const postTaskSchema = {
-    body: {
-        task
-    },
+  body: {
+    task,
+  },
 };
 
 const putTaskSchema = {
-    body: task,
-    params: {
-        taskId: str,
-    },
+  body: task,
+  params: {
+    taskId: str,
+  },
 };
 
 const deleteTaskSchema = {
-    params: {
-        taskId: str
-    },
+  params: {
+    taskId: str,
+  },
 };
 
-module.exports = () => ({getTasksSchema, getTaskSchema, postTaskSchema, putTaskSchema, deleteTaskSchema});
+module.exports = () => ({
+  getTasksSchema,
+  getTaskSchema,
+  postTaskSchema,
+  putTaskSchema,
+  deleteTaskSchema,
+});
