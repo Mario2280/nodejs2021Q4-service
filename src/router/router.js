@@ -3,85 +3,85 @@ const taskHandler = require("../constrollers/handlers/forTasks");
 const userHandler = require("../constrollers/handlers/forUsers");
 
 
-// const boardSchema = require("../constrollers/schemas/forBoards");
-// const taskSchema = require("../constrollers/schemas/forTasks");
-// const userSchema = require("../constrollers/schemas/forUsers");
+const boardSchema = require("../constrollers/schemas/forBoards");
+const taskSchema = require("../constrollers/schemas/forTasks");
+const userSchema = require("../constrollers/schemas/forUsers");
 
 
 const getUsersOpt = {
-    // schema: userSchema().getUsersSchema,
+    schema: userSchema().getUsersSchema,
     handler: userHandler().userGetAll
 };
 
 const getUserOpt = {
-    // schema: userSchema().getUserSchema,
+    schema: userSchema().getUserSchema,
     handler: userHandler().userGet
 };
 
 const postUserOpt = {
-    // schema: userSchema().postUserSchema,
+    schema: userSchema().postUserSchema,
     handler: userHandler().userPost
 };
 
 const putUserOpt = {
-    // schema: userSchema().putUserSchema,
+    schema: userSchema().putUserSchema,
     handler: userHandler().userPut
 };
 
 const deleteUserOpt = {
-    // schema: userSchema().deleteUserSchema,
+    schema: userSchema().deleteUserSchema,
     handler: userHandler().userDelete
 };
 
 
 const getTasksOpt = {
-    // schema: taskSchema().getTasksSchema,
+    schema: taskSchema().getTasksSchema,
     handler: taskHandler().taskGetAll
 };
 
 const getTaskOpt = {
-    // schema: taskSchema().getTaskSchema,
+    schema: taskSchema().getTaskSchema,
     handler: taskHandler().taskGet
 };
 
 const postTaskOpt = {
-    // schema: taskSchema().postTaskSchema,
+    schema: taskSchema().postTaskSchema,
     handler: taskHandler().taskPost
 };
 
 const putTaskOpt = {
-    // schema: taskSchema().putTaskSchema,
+    schema: taskSchema().putTaskSchema,
     handler: taskHandler().taskPut
 };
 
 const deleteTaskOpt = {
-    // schema: taskSchema().deleteTaskSchema,
+    schema: taskSchema().deleteTaskSchema,
     handler: taskHandler().taskDelete
 };
 
 
 const getBoardsOpt = {
-    // schema: taskSchema().getBoardsSchema,
+    schema: taskSchema().getBoardsSchema,
     handler: boardHandler().boardGetAll
 };
 
 const getBoardOpt = {
-    // schema: boardSchema().getBoardSchema,
+    schema: boardSchema().getBoardSchema,
     handler: boardHandler().boardGet
 };
 
 const postBoardOpt = {
-    // schema: boardSchema().postBoardSchema,
+    schema: boardSchema().postBoardSchema,
     handler: boardHandler().boardPost
 };
 
 const putBoardOpt = {
-    // schema: boardSchema().putBoardSchema,
+    schema: boardSchema().putBoardSchema,
     handler: boardHandler().boardPut
 };
 
 const deleteBoardOpt = {
-    // schema: boardSchema().deleteBoardSchema,
+    schema: boardSchema().deleteBoardSchema,
     handler: boardHandler().boardDelete
 };
 

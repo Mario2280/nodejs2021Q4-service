@@ -4,7 +4,7 @@ const Column = {
     type: 'object',
     properties: {
         title: str,
-        order: str,
+        order: num,
     }
 };
 const board = {
@@ -13,54 +13,43 @@ const board = {
     properties: {
         title: str,
         columns: {type: 'array', items: Column},
+        id:str,
         password: str
     }
 };
 
 const getBoardsSchema = {
-    response: {
-        200: {
-            type: 'array',
-            items: board
-        }
-    }
+    // response: {
+    //     200: {
+    //         type: 'array',
+    //         items: board
+    //     }
+    // }
 };
 
 const getBoardSchema = {
     params: {
-        boardId: num,
+        boardId: str,
     },
-    response: {
-        200: board
-    }
 };
 
 const postBoardSchema = {
     body: {
         board
     },
-    response: {
-        200: str,
-    }
 };
 
 const putBoardSchema = {
     body: board,
     params: {
-        boardId: num,
+        boardId: str,
     },
-    response: {
-        200: str
-    }
 };
 
 const deleteBoardSchema = {
     params: {
         boardId: str
     },
-    response: {
-        200: str,
-    }
 };
 
 module.exports = () => ({getBoardsSchema, getBoardSchema, postBoardSchema, putBoardSchema, deleteBoardSchema});

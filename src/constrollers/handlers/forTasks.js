@@ -9,11 +9,22 @@ const {
 
 const taskPost = (req, res) => {
     const {body} = req;
-    res.send(postTask(body.title, body.order, body.description, body.userId, body.boardId, body.columnId));
+    body.boardId = req.params.boardId;
+    res
+    .code(201)
+    .send(postTask(body));
 }
 
 const taskGet = (req, res) => {
-    res.send(getTask(req.body.params.taskId));
+    const result = getTask(req.params.taskId);
+    if(result.message){
+        res.code(404).send();
+    } else {
+        res.code(200)
+        .header("Content-type", "application/json")
+        .send(result);
+    }
+    
 }
 
 const taskGetAll = (req, res) => {
@@ -26,7 +37,12 @@ const taskPut = (req, res) => {
 }
 
 const taskDelete = (req, res) => {
-    res.send(deleteTask(req.params.taskId));
+    const result = deleteTask(req.params.taskId);
+    if(result.message){
+        res.code(200).send();
+    }
+    res.code(404).send(result.message);
+    
 }
 
 module.exports = () => ({

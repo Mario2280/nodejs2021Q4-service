@@ -33,7 +33,6 @@ const userPut = (req, res) => {
 }
 
 const userDelete = (req, res) => {
-    res.status(201);
     res.send(deleteUser(req.params.userId));
 }
 

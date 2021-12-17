@@ -1,12 +1,12 @@
 const uuid = require('uuid');
 
 class Board {
-    constructor(title, order, columns) {
+    constructor(obj) {
         this.id = uuid.v4();
-        this.title = title;
-        this.order = order;
-        if(columns){
-            this.columns = columns;
+        this.title = obj.title;
+        this.order = obj.order;
+        if(obj.columns){
+            this.columns = obj.columns;
         }
     }
 

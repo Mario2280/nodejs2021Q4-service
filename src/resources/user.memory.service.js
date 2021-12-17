@@ -1,3 +1,4 @@
+
 const User = require('./UserModel');
 const Board = require('./BoardModel');
 const Task = require('./TaskModel');
@@ -38,11 +39,15 @@ const putUser = (name, login, password, id) => {
 };
 
 const deleteUser = (id) => {
-    const res = Users.find((value) => value.id === id);
-    if (res >= 0) {
-        Tasks = Tasks.filter((val) => val.userId !== id);
+    const res = Users.findIndex((value) => value.id === id);
+    if (res !== 0) {
+        for(let i = 0; i < Tasks.length; i+=1) {
+            if(Tasks[i].userId === id){
+                Tasks[i].userId = null;
+            }
+        }
         Users.splice(res, 1);
-        return {message: `User ${Users[res].id} deleted`};
+        return {message: `User ${id} deleted`};
     } 
         return {message: "User not found"};
     
@@ -61,20 +66,30 @@ const getTask = (id) => {
     
 };
 
-const postTask = (title, order, description, userId, boardId, columnId) => {
-    Tasks.push(new Task(title, order, description, userId, boardId, columnId));
-    return {message: `Task created`};
+const postTask = (taskObj) => {
+    const newTask = new Task(taskObj);
+    Tasks.push(newTask);
+    return newTask;
 };
 
 const putTask = (id, title, order, description, userId, boardId, columnId) => {
     const res = Tasks.findIndex((value) => value.id === id);
-    if (res >= 0) {
+    if (res !== -1) {
         Tasks[res].title = title;
         Tasks[res].order = order;
         Tasks[res].description = description;
-        Tasks[res].userId = userId;
+        if(!userId){
+            Tasks[res].userId = null;
+        } else {
+            Tasks[res].userId = userId;
+        }
         Tasks[res].boardId = boardId;
-        Tasks[res].columnId = columnId;
+        if(!userId){
+            Tasks[res].columnId = null;
+        } else {
+            Tasks[res].columnId = columnId;
+        }
+        
         return {message: `Task ${Tasks[res].id}updated`};
     } 
         return {message: "Task not found"};
@@ -82,12 +97,12 @@ const putTask = (id, title, order, description, userId, boardId, columnId) => {
 };
 
 const deleteTask = (id) => {
-    const res = Tasks.find((value) => value.id === id);
-    if (res >= 0) {
+    const res = Tasks.findIndex((value) => value.id === id);
+    if (res !== -1) {
         Tasks.splice(res, 1);
         return {message: `Task ${Tasks[res].id} deleted`};
     } 
-        return {message: "Task not found"};
+        return -1;
     
 };
 
@@ -99,14 +114,18 @@ const getBoard = (id) => {
     if (res) {
         return Board.toResponse(res);
     } 
-        return {message: "Board not found"};
+    return 404;
+
+
+    
+
     
 };
 
-const postBoard = (title, order, columns) => {
-    const res = new Board(title, order, columns);
+const postBoard = (boardObj) => {
+    const res = new Board(boardObj);
     Boards.push(res);
-    return res;
+    return Board.toResponse(res);
 };
 
 const putBoard = (title, order, columns, id) => {
@@ -122,11 +141,11 @@ const putBoard = (title, order, columns, id) => {
 };
 
 const deleteBoard = (id) => {
-    const res = Boards.find((value) => value.id === id);
-    if (res >= 0) {
+    const res = Boards.findIndex((value) => value.id === id);
+    if (res !== -1) {
         Tasks = Tasks.filter((val) => val.boardId !== id);
         Boards.splice(res, 1);
-        return {message: `Board ${Boards[res].id} deleted`};
+        return {message: `Board ${id} deleted`};
     } 
         return {message: "Board not found"};
     
@@ -152,7 +171,7 @@ module.exports = {
     putTask,
     deleteTask,
 
-}
+};
 
 
 

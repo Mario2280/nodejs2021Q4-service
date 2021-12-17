@@ -9,15 +9,21 @@ const {
 
 const boardPost = (req, res) => {
     const {body} = req;
-    res.header('Content-Type', 'application/json');
-    res.status(201);
-    res.send(postBoard(body.title, body.order, body.columns));
+    res
+    .code(201)
+    .header('Content-Type', 'application/json')
+    .send(postBoard(body));
 }
 
 const boardGet = (req, res) => {
     res.header('Content-Type', 'application/json');
-    res.status(200);
-    res.send(getBoard(req.params.boardId));
+    const result = getBoard(req.params.boardId);
+    if(result === 404){
+        res.code(404).send();
+    } else{
+        res.send(result);
+    }
+
 }
 
 const boardGetAll = (req, res) => {

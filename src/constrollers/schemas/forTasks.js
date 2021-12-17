@@ -6,7 +6,7 @@ const task = {
     // required: ['title', 'order', 'description', 'userId', 'boardId', 'columnId'],
     properties: {
         title: str,
-        order: str,
+        order: num,
         description: str,
         userId: str,
         boardId: str,
@@ -15,49 +15,37 @@ const task = {
 }
 
 const getTasksSchema = {
-    response: {
-        200: {
-            type: 'array',
-            items: task
-        }
-    }
+    // response: {
+    //     200: {
+    //         type: 'array',
+    //         items: task
+    //     }
+    // }
 };
 
 const getTaskSchema = {
     params: {
-        taskId: num,
+        taskId: str,
     },
-    response: {
-        200: task
-    }
 };
 
 const postTaskSchema = {
     body: {
         task
     },
-    response: {
-        200: str,
-    }
 };
 
 const putTaskSchema = {
     body: task,
     params: {
-        taskId: num,
+        taskId: str,
     },
-    response: {
-        200: str
-    }
 };
 
 const deleteTaskSchema = {
     params: {
         taskId: str
     },
-    response: {
-        200: str,
-    }
 };
 
 module.exports = () => ({getTasksSchema, getTaskSchema, postTaskSchema, putTaskSchema, deleteTaskSchema});
