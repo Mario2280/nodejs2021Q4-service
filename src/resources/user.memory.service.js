@@ -100,7 +100,7 @@ const deleteTask = (id) => {
     const res = Tasks.findIndex((value) => value.id === id);
     if (res !== -1) {
         Tasks.splice(res, 1);
-        return {message: `Task ${Tasks[res].id} deleted`};
+        return {message: `Task ${id} deleted`};
     } 
         return -1;
     

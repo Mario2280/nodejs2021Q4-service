@@ -40,8 +40,10 @@ const taskDelete = (req, res) => {
     const result = deleteTask(req.params.taskId);
     if(result.message){
         res.code(200).send();
+    } else {
+        res.code(404).send(`Not Found`);
     }
-    res.code(404).send(result.message);
+    
     
 }
 
