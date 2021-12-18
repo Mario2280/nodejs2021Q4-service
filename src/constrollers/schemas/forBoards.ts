@@ -52,10 +52,11 @@ const deleteBoardSchema = {
   },
 };
 
-module.exports = () => ({
+
+export = () => ({
   getBoardsSchema,
   getBoardSchema,
   postBoardSchema,
   putBoardSchema,
   deleteBoardSchema,
-});
+})

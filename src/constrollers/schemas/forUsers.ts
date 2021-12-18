@@ -1,5 +1,5 @@
 const str = { type: 'string' };
-// const num = {type: 'number'};
+
 const user = {
   type: 'object',
   properties: {
@@ -63,10 +63,11 @@ const deleteUserSchema = {
   },
 };
 
-module.exports = () => ({
+
+export = () => ({
   getUsersSchema,
   getUserSchema,
   postUserSchema,
   putUserSchema,
   deleteUserSchema,
-});
+})

@@ -1,12 +1,11 @@
-const Board = require('../models/BoardModel');
+import Board, {IBoard} from "../models/BoardModel";
+import { filterTasks } from "./task.memory.service";
 
-const { filterTasks } = require('./task.memory.service');
-
-const Boards = [];
+const Boards: Array<Board> = [];
 
 const getBoards = () => Boards;
 
-const getBoard = (id) => {
+const getBoard = (id: string) => {
   const res = Boards.find((val) => val.id === id);
   if (res) {
     return Board.toResponse(res);
@@ -14,13 +13,14 @@ const getBoard = (id) => {
   return 404;
 };
 
-const postBoard = (boardObj) => {
+const postBoard = (boardObj: IBoard) => {
   const res = new Board(boardObj);
   Boards.push(res);
   return Board.toResponse(res);
 };
 
-const putBoard = (title, order, columns, id) => {
+const putBoard = (boardObj: IBoard) => {
+  const {title, order, columns, id} = boardObj;
   const res = Boards.findIndex((value) => value.id === id);
   if (res >= 0) {
     Boards[res].title = title;
@@ -35,7 +35,7 @@ const putBoard = (title, order, columns, id) => {
   };
 };
 
-const deleteBoard = (id) => {
+const deleteBoard = (id:string) => {
   const res = Boards.findIndex((value) => value.id === id);
   if (res !== -1) {
     filterTasks(id);
@@ -49,7 +49,9 @@ const deleteBoard = (id) => {
   };
 };
 
-module.exports = {
+
+
+export {
   getBoards,
   getBoard,
   postBoard,

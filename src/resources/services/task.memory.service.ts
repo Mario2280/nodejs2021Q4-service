@@ -1,28 +1,36 @@
-const Task = require('../models/TaskModel');
+import Task, { ITask } from '../models/TaskModel';
 
-let Tasks = [];
+let Tasks: Array<Task> = [];
 
-const filterTasks = (id) => {
-  Tasks = Tasks.filter((value) => value.boardId !== id);
+const filterTasks = (id: string, byUser?: boolean) => {
+  if(byUser) {
+    for (let i = 0; i < Tasks.length; i += 1) {
+      if (Tasks[i].userId === id) {
+        Tasks[i].userId = null;
+      }
+    }
+  } else {
+    Tasks = Tasks.filter((value) => value.boardId !== id);
+  } 
 };
 
 const getTasks = () => Tasks;
 
-const getTask = (id) => {
+const getTask = (id: string): ITask | void => {
   const res = Tasks.find((val) => val.id === id);
   if (res) {
     return Task.toResponse(res);
   }
-  return { message: 'Task not found' };
+  return;
 };
 
-const postTask = (taskObj) => {
+const postTask = (taskObj: ITask) => {
   const newTask = new Task(taskObj);
   Tasks.push(newTask);
   return newTask;
 };
 
-const putTask = (id, taskObj) => {
+const putTask = (id: string, taskObj: ITask) => {
   const res = Tasks.findIndex((value) => value.id === id);
   if (res !== -1) {
     Tasks[res].title = taskObj.title;
@@ -45,20 +53,15 @@ const putTask = (id, taskObj) => {
   return { message: 'Task not found' };
 };
 
-const deleteTask = (id) => {
+const deleteTask = (id: string) : void | ITask => {
   const res = Tasks.findIndex((value) => value.id === id);
   if (res !== -1) {
+    const returnMsg = Tasks[res];
     Tasks.splice(res, 1);
-    return { message: `Task ${id} deleted` };
+    return returnMsg;
   }
-  return -1;
+  return;
 };
-module.exports = {
-  Tasks,
-  filterTasks,
-  getTasks,
-  getTask,
-  postTask,
-  putTask,
-  deleteTask,
-};
+
+
+export { Tasks, filterTasks, getTasks, getTask, postTask, putTask, deleteTask } 

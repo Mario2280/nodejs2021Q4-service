@@ -1,9 +1,10 @@
-const userHandler = require('../constrollers/handlers/forUsers');
-const userSchema = require('../constrollers/schemas/forUsers');
+
+import userHandler from '../constrollers/handlers/forUsers';
+import userSchema from '../constrollers/schemas/forUsers';
 
 const getUsersOpt = {
   schema: userSchema().getUsersSchema,
-  handler: userHandler().userGetAll,
+  handler: userHandler().userGetAll
 };
 
 const getUserOpt = {
@@ -26,10 +27,10 @@ const deleteUserOpt = {
   handler: userHandler().userDelete,
 };
 
-module.exports = {
+export = () => ({
   getUsersOpt,
   getUserOpt,
   postUserOpt,
   putUserOpt,
   deleteUserOpt,
-};
+})

@@ -1,9 +1,12 @@
-const { PORT } = require('./common/config');
-const app = require('./app');
+
+import config from './common/config';
+import app from './app';
+
+const data = config();
 
 const startServer = () => {
   try {
-    app.listen(PORT);
+    app.listen(data.PORT);
   } catch (e) {
     app.log.error(e);
     process.exit(1);

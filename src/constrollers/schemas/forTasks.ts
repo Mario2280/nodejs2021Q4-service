@@ -48,10 +48,12 @@ const deleteTaskSchema = {
   },
 };
 
-module.exports = () => ({
+
+
+export = () => ({
   getTasksSchema,
   getTaskSchema,
   postTaskSchema,
   putTaskSchema,
   deleteTaskSchema,
-});
+})

@@ -1,6 +1,5 @@
-const taskHandler = require('../constrollers/handlers/forTasks');
-
-const taskSchema = require('../constrollers/schemas/forTasks');
+import taskHandler from '../constrollers/handlers/forTasks';
+import taskSchema from '../constrollers/schemas/forTasks';
 
 const getTasksOpt = {
   schema: taskSchema().getTasksSchema,
@@ -27,10 +26,10 @@ const deleteTaskOpt = {
   handler: taskHandler().taskDelete,
 };
 
-module.exports = {
+export = () => ({ 
   getTasksOpt,
   getTaskOpt,
   postTaskOpt,
   putTaskOpt,
   deleteTaskOpt,
-};
+})

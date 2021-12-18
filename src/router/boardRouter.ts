@@ -1,6 +1,6 @@
-const boardHandler = require('../constrollers/handlers/forBoards');
+import boardHandler from '../constrollers/handlers/forBoards';
 
-const boardSchema = require('../constrollers/schemas/forBoards');
+import boardSchema from '../constrollers/schemas/forBoards';
 
 const getBoardsOpt = {
   handler: boardHandler().boardGetAll,
@@ -26,10 +26,10 @@ const deleteBoardOpt = {
   handler: boardHandler().boardDelete,
 };
 
-module.exports = {
+export = () => ({
   getBoardsOpt,
   getBoardOpt,
   postBoardOpt,
   putBoardOpt,
   deleteBoardOpt,
-};
+})
