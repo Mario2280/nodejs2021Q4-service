@@ -1,7 +1,7 @@
-import User, {IUser} from '../models/UserModel';
+import User, { IUser } from '../models/UserModel';
 import { filterTasks } from './task.memory.service';
 
-const Users : Array<User> = [];
+const Users: Array<User> = [];
 
 const getUsers = () => Users;
 
@@ -21,7 +21,7 @@ const postUser = (objUser: IUser) => {
 };
 
 const putUser = (objUser: IUser) => {
-  const {name, login, password, id} = objUser;
+  const { name, login, password, id } = objUser;
   const res = Users.findIndex((value) => value.id === id);
   if (res >= 0) {
     Users[res].name = name;
@@ -42,12 +42,4 @@ const deleteUser = (id: string) => {
   return { message: 'User not found' };
 };
 
-
-
-export {
-  getUsers,
-  getUser,
-  postUser,
-  putUser,
-  deleteUser
-}
+export { getUsers, getUser, postUser, putUser, deleteUser };

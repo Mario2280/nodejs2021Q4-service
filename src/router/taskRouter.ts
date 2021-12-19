@@ -26,10 +26,10 @@ const deleteTaskOpt = {
   handler: taskHandler().taskDelete,
 };
 
-export = () => ({ 
+export = () => ({
   getTasksOpt,
   getTaskOpt,
   postTaskOpt,
   putTaskOpt,
   deleteTaskOpt,
-})
+});

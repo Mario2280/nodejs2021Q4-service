@@ -1,5 +1,5 @@
-import Board, {IBoard} from "../models/BoardModel";
-import { filterTasks } from "./task.memory.service";
+import Board, { IBoard } from '../models/BoardModel';
+import { filterTasks } from './task.memory.service';
 
 const Boards: Array<Board> = [];
 
@@ -20,7 +20,7 @@ const postBoard = (boardObj: IBoard) => {
 };
 
 const putBoard = (boardObj: IBoard) => {
-  const {title, order, columns, id} = boardObj;
+  const { title, order, columns, id } = boardObj;
   const res = Boards.findIndex((value) => value.id === id);
   if (res >= 0) {
     Boards[res].title = title;
@@ -35,7 +35,7 @@ const putBoard = (boardObj: IBoard) => {
   };
 };
 
-const deleteBoard = (id:string) => {
+const deleteBoard = (id: string) => {
   const res = Boards.findIndex((value) => value.id === id);
   if (res !== -1) {
     filterTasks(id);
@@ -49,12 +49,4 @@ const deleteBoard = (id:string) => {
   };
 };
 
-
-
-export {
-  getBoards,
-  getBoard,
-  postBoard,
-  putBoard,
-  deleteBoard,
-};
+export { getBoards, getBoard, postBoard, putBoard, deleteBoard };

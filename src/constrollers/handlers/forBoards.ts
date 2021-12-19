@@ -1,14 +1,19 @@
-
-import {FastifyRequest, FastifyReply} from 'fastify';
-import { getBoards, getBoard, postBoard, putBoard, deleteBoard } from '../../resources/services/board.memory.service'
-import {IBoard} from '../../resources/models/BoardModel'
+import { FastifyRequest, FastifyReply } from 'fastify';
+import {
+  getBoards,
+  getBoard,
+  postBoard,
+  putBoard,
+  deleteBoard,
+} from '../../resources/services/board.memory.service';
+import { IBoard } from '../../resources/models/BoardModel';
 
 type CustomRequest = FastifyRequest<{
   Params: {
-    boardId: string
-  },
-  Body: IBoard,
-}>
+    boardId: string;
+  };
+  Body: IBoard;
+}>;
 
 const boardPost = (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
@@ -41,11 +46,10 @@ const boardDelete = (req: CustomRequest, res: FastifyReply) => {
   res.send(deleteBoard(req.params.boardId));
 };
 
-
 export = () => ({
   boardPost,
   boardGet,
   boardGetAll,
   boardPut,
-  boardDelete
-})
+  boardDelete,
+});

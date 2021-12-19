@@ -1,13 +1,19 @@
-import {FastifyRequest, FastifyReply} from 'fastify';
-import { getUsers,  getUser,  postUser,  putUser,  deleteUser} from '../../resources/services/user.memory.service'
-import {IUser} from '../../resources/models/UserModel'
+import { FastifyRequest, FastifyReply } from 'fastify';
+import {
+  getUsers,
+  getUser,
+  postUser,
+  putUser,
+  deleteUser,
+} from '../../resources/services/user.memory.service';
+import { IUser } from '../../resources/models/UserModel';
 
 type CustomRequest = FastifyRequest<{
   Params: {
-    userId: string,
-  },
-  Body: IUser,
-}>
+    userId: string;
+  };
+  Body: IUser;
+}>;
 
 const userPost = (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
@@ -38,11 +44,10 @@ const userDelete = (req: CustomRequest, res: FastifyReply) => {
   res.send(deleteUser(req.params.userId));
 };
 
-
 export = () => ({
   userPost,
   userGet,
   userGetAll,
   userPut,
-  userDelete
-})
+  userDelete,
+});

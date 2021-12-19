@@ -5,7 +5,6 @@ dotenv.config({
   path: path.join(__dirname, '../../.env'),
 });
 
-
 export = () => ({
   PORT: process.env.PORT || 4000,
   NODE_ENV: process.env.NODE_ENV,

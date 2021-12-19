@@ -1,31 +1,30 @@
 import * as uuid from 'uuid';
 
 interface ITask {
-  id?:string,
-  title:string,
-  order:number,
-  description:string,
-  userId:string | null,
-  columnId:string | null,
-  boardId:string,
+  id?: string;
+  title: string;
+  order: number;
+  description: string;
+  userId: string | null;
+  columnId: string | null;
+  boardId: string;
 }
 
 class Task {
-  
-  id:string;
+  id: string;
 
-  title:string;
+  title: string;
 
-  order:number;
+  order: number;
 
-  description:string;
+  description: string;
 
-  userId:string | null;
+  userId: string | null;
 
-  columnId:string | null;
+  columnId: string | null;
 
-  boardId:string;
-  
+  boardId: string;
+
   constructor(obj: ITask) {
     this.id = uuid.v4();
     this.title = obj.title;
@@ -36,7 +35,7 @@ class Task {
     this.boardId = obj.boardId;
   }
 
-  static toResponse(task: ITask) : ITask{
+  static toResponse(task: ITask): ITask {
     const { title, order, description, userId, boardId, columnId, id } = task;
     return { title, order, description, userId, boardId, columnId, id };
   }
@@ -44,4 +43,4 @@ class Task {
 
 export default Task;
 
-export {ITask};
+export { ITask };

@@ -1,21 +1,20 @@
 import * as uuid from 'uuid';
 
 interface IUser {
-  id?:string,
-  name:string,
-  login:number,
-  password:string,
+  id?: string;
+  name: string;
+  login: number;
+  password: string;
 }
 
 class User {
-  
-  id:string;
+  id: string;
 
-  name:string;
+  name: string;
 
-  login:number;
+  login: number;
 
-  password:string;
+  password: string;
 
   constructor(userObj: IUser) {
     this.id = uuid.v4();
@@ -31,4 +30,4 @@ class User {
 }
 
 export default User;
-export {IUser};
+export { IUser };

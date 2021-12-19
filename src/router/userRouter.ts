@@ -1,10 +1,9 @@
-
 import userHandler from '../constrollers/handlers/forUsers';
 import userSchema from '../constrollers/schemas/forUsers';
 
 const getUsersOpt = {
   schema: userSchema().getUsersSchema,
-  handler: userHandler().userGetAll
+  handler: userHandler().userGetAll,
 };
 
 const getUserOpt = {
@@ -33,4 +32,4 @@ export = () => ({
   postUserOpt,
   putUserOpt,
   deleteUserOpt,
-})
+});

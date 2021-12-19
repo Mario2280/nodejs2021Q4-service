@@ -32,4 +32,4 @@ export = () => ({
   postBoardOpt,
   putBoardOpt,
   deleteBoardOpt,
-})
+});

@@ -63,11 +63,10 @@ const deleteUserSchema = {
   },
 };
 
-
 export = () => ({
   getUsersSchema,
   getUserSchema,
   postUserSchema,
   putUserSchema,
   deleteUserSchema,
-})
+});

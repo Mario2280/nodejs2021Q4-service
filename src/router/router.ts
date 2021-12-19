@@ -3,8 +3,7 @@ import user from './userRouter';
 import task from './taskRouter';
 import board from './boardRouter';
 
-const Routes = async (fastify : FastifyInstance) => {
-  
+const Routes = async (fastify: FastifyInstance) => {
   fastify.get('/users', user().getUsersOpt);
 
   fastify.get('/users/:userId', user().getUserOpt);
@@ -34,7 +33,6 @@ const Routes = async (fastify : FastifyInstance) => {
   fastify.put('/boards/:boardId/tasks/:taskId', task().putTaskOpt);
 
   fastify.delete('/boards/:boardId/tasks/:taskId', task().deleteTaskOpt);
- 
 };
 
 export default Routes;

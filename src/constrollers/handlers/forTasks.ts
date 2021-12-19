@@ -1,14 +1,20 @@
-import {FastifyRequest, FastifyReply} from 'fastify';
-import {  getTasks,  getTask,  postTask,  putTask,  deleteTask} from '../../resources/services/task.memory.service';
-import {ITask} from '../../resources/models/TaskModel'
+import { FastifyRequest, FastifyReply } from 'fastify';
+import {
+  getTasks,
+  getTask,
+  postTask,
+  putTask,
+  deleteTask,
+} from '../../resources/services/task.memory.service';
+import { ITask } from '../../resources/models/TaskModel';
 
 type CustomRequest = FastifyRequest<{
   Params: {
-    boardId: string,
-    taskId: string,
-  },
-  Body: ITask,
-}>
+    boardId: string;
+    taskId: string;
+  };
+  Body: ITask;
+}>;
 
 const taskPost = (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
@@ -43,12 +49,10 @@ const taskDelete = (req: CustomRequest, res: FastifyReply) => {
   }
 };
 
-
-
 export = () => ({
   taskPost,
   taskGet,
   taskGetAll,
   taskPut,
-  taskDelete
-})
+  taskDelete,
+});

@@ -52,11 +52,10 @@ const deleteBoardSchema = {
   },
 };
 
-
 export = () => ({
   getBoardsSchema,
   getBoardSchema,
   postBoardSchema,
   putBoardSchema,
   deleteBoardSchema,
-})
+});

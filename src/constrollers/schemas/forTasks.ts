@@ -48,12 +48,10 @@ const deleteTaskSchema = {
   },
 };
 
-
-
 export = () => ({
   getTasksSchema,
   getTaskSchema,
   postTaskSchema,
   putTaskSchema,
   deleteTaskSchema,
-})
+});

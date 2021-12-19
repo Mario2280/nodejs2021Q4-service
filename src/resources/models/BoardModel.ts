@@ -1,23 +1,23 @@
-import * as uuid from "uuid";
+import * as uuid from 'uuid';
 
 interface IColum {
-  title: string,
-  order: number,
+  title: string;
+  order: number;
 }
 
 interface IBoard {
-  id:string,
-  title:string,
-  order:number,
-  columns?: Array<IColum>,
+  id: string;
+  title: string;
+  order: number;
+  columns?: Array<IColum>;
 }
 
 class Board {
-  id : string;
+  id: string;
 
   title: string;
 
-  order:number;
+  order: number;
 
   columns: Array<IColum> | undefined;
 
@@ -37,4 +37,4 @@ class Board {
 }
 
 export default Board;
-export {IBoard};
+export { IBoard };

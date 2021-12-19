@@ -3,7 +3,7 @@ import Task, { ITask } from '../models/TaskModel';
 let Tasks: Array<Task> = [];
 
 const filterTasks = (id: string, byUser?: boolean) => {
-  if(byUser) {
+  if (byUser) {
     for (let i = 0; i < Tasks.length; i += 1) {
       if (Tasks[i].userId === id) {
         Tasks[i].userId = null;
@@ -11,7 +11,7 @@ const filterTasks = (id: string, byUser?: boolean) => {
     }
   } else {
     Tasks = Tasks.filter((value) => value.boardId !== id);
-  } 
+  }
 };
 
 const getTasks = () => Tasks;
@@ -53,7 +53,7 @@ const putTask = (id: string, taskObj: ITask) => {
   return { message: 'Task not found' };
 };
 
-const deleteTask = (id: string) : void | ITask => {
+const deleteTask = (id: string): void | ITask => {
   const res = Tasks.findIndex((value) => value.id === id);
   if (res !== -1) {
     const returnMsg = Tasks[res];
@@ -63,5 +63,4 @@ const deleteTask = (id: string) : void | ITask => {
   return;
 };
 
-
-export { Tasks, filterTasks, getTasks, getTask, postTask, putTask, deleteTask } 
+export { Tasks, filterTasks, getTasks, getTask, postTask, putTask, deleteTask };
