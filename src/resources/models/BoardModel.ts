@@ -30,7 +30,13 @@ class Board {
     }
   }
 
-  static toResponse(board: IBoard) {
+  /**
+   *
+   * @description This method was conceived to remove secret fields from an object
+   * @param board {@link IBoard} object
+   * @returns -> {@link IBoard} object
+   */
+  static toResponse(board: IBoard): IBoard {
     const { id, title, order, columns } = board;
     return { id, title, order, columns };
   }

@@ -23,7 +23,17 @@ class User {
     this.password = userObj.password;
   }
 
-  static toResponse(user: IUser) {
+  /**
+   *
+   * @description This method was conceived to remove secret fields from an object. In this case it is the password
+   * @param board {@link IUser} object
+   * @returns -> {@link IUser} object without {@link IUser.password}
+   */
+  static toResponse(user: IUser): {
+    id: string | undefined;
+    name: string;
+    login: number;
+  } {
     const { id, name, login } = user;
     return { id, name, login };
   }

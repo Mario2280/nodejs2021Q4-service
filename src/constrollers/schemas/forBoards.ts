@@ -19,12 +19,6 @@ const board = {
 };
 
 const getBoardsSchema = {
-  // response: {
-  //     200: {
-  //         type: 'array',
-  //         items: board
-  //     }
-  // }
 };
 
 const getBoardSchema = {

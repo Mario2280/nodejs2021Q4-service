@@ -14,7 +14,12 @@ type CustomRequest = FastifyRequest<{
   };
   Body: IBoard;
 }>;
-
+/**
+ *
+ * @param req Request including fields boardId and body realizing  {@link IBoard}
+ * @param res Default fastify response {@link FastifyReply}
+ * @returns void
+ */
 const boardPost = (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
   res
@@ -22,7 +27,12 @@ const boardPost = (req: CustomRequest, res: FastifyReply) => {
     .header('Content-Type', 'application/json')
     .send(postBoard(body));
 };
-
+/**
+ *
+ * @param req Request including fields boardId and body realizing  {@link IBoard}
+ * @param res Default fastify response {@link FastifyReply}
+ * @returns void
+ */
 const boardGet = (req: CustomRequest, res: FastifyReply) => {
   res.header('Content-Type', 'application/json');
   const result = getBoard(req.params.boardId);
@@ -32,16 +42,31 @@ const boardGet = (req: CustomRequest, res: FastifyReply) => {
     res.send(result);
   }
 };
-
+/**
+ *
+ * @param req Default fastify request {@link FastifyRequest}
+ * @param res Default fastify response {@link FastifyReply}
+ * @returns void
+ */
 const boardGetAll = (req: FastifyRequest, res: FastifyReply) => {
   res.send(getBoards());
 };
-
+/**
+ *
+ * @param req Request including fields boardId and body realizing  {@link IBoard}
+ * @param res Default fastify response {@link FastifyReply}
+ * @returns void
+ */
 const boardPut = (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
   res.send(putBoard(body));
 };
-
+/**
+ *
+ * @param req Request including fields boardId and body realizing  {@link IBoard}
+ * @param res Default fastify response {@link FastifyReply}
+ * @returns void
+ */
 const boardDelete = (req: CustomRequest, res: FastifyReply) => {
   res.send(deleteBoard(req.params.boardId));
 };

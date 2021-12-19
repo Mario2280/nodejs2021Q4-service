@@ -15,12 +15,6 @@ const task = {
 };
 
 const getTasksSchema = {
-  // response: {
-  //     200: {
-  //         type: 'array',
-  //         items: task
-  //     }
-  // }
 };
 
 const getTaskSchema = {
