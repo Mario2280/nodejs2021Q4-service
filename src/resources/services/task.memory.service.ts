@@ -1,6 +1,6 @@
 import Task, { ITask } from '../models/TaskModel';
 
-let Tasks: Array<Task> = [];
+const Tasks: Array<Task> = [];
 
 const filterTasks = (id: string, byUser?: boolean) => {
   if (byUser) {
@@ -10,18 +10,23 @@ const filterTasks = (id: string, byUser?: boolean) => {
       }
     }
   } else {
-    Tasks = Tasks.filter((value) => value.boardId !== id);
+    for (let i = 0; i < Tasks.length; i += 1) {
+      if (Tasks[i].boardId === id) {
+        Tasks.splice(i, 1);
+        i -= 1;
+      }
+    }
   }
 };
 
 const getTasks = () => Tasks;
 
-const getTask = (id: string): ITask | void => {
+const getTask = (id: string): ITask | null => {
   const res = Tasks.find((val) => val.id === id);
   if (res) {
     return Task.toResponse(res);
   }
-  return;
+  return null;
 };
 
 const postTask = (taskObj: ITask) => {
@@ -53,14 +58,14 @@ const putTask = (id: string, taskObj: ITask) => {
   return { message: 'Task not found' };
 };
 
-const deleteTask = (id: string): void | ITask => {
+const deleteTask = (id: string): null | ITask => {
   const res = Tasks.findIndex((value) => value.id === id);
   if (res !== -1) {
     const returnMsg = Tasks[res];
     Tasks.splice(res, 1);
     return returnMsg;
   }
-  return;
+  return null;
 };
 
 export { Tasks, filterTasks, getTasks, getTask, postTask, putTask, deleteTask };

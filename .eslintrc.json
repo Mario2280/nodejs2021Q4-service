@@ -13,14 +13,15 @@
       "impliedStrict": true
     }
   },
+  "parser": "@typescript-eslint/parser",
   "settings": {
     "noInlineConfig": true
   },
   "extends": [
     "eslint:recommended",
-    "plugin:node/recommended",
     "airbnb-base",
-    "prettier"
+    "prettier",
+    "plugin:import/typescript"
   ],
   "rules": {
     "no-explicit-any": "off",
