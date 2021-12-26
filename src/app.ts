@@ -24,6 +24,14 @@ const app = fastify({
     done();
 });
 
+process.on('uncaughtException', (e) => {
+    app.log.fatal(`${e.message}`)
+});
+
+
+process.on('unhandledRejection', (e) => {
+    app.log.fatal(`${e}`)
+});
 
 app.register(router);
 
