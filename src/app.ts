@@ -14,7 +14,15 @@ const logger = {
 const app = fastify({
     logger
 })
-
+.addHook('preHandler', (req,res, done) => {
+    if(req.body){
+        req.log.info({body: req.body}, 'parsed body');
+    }
+    if(req.query){
+        req.log.info({query: req.query}, 'parsed query');
+    }
+    done();
+});
 
 
 app.register(router);
