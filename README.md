@@ -3,21 +3,18 @@
 # *Инструкция*
 
  Полезыные ссылки
- + [Задание](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/rest-service.md)
- + [Критерии проверки](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/rest-service.md)
+ + [Задание](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/typescript-basics.md)
+ + [Критерии проверки](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/typescript-basics.md)
  + [Моя самопроверка](#self-test)
- + 06.12.2021	23:59 / 06.12.2021	23:59	
+ + 20.12.2021	0:00 / 19.12.2021	22:00	
 
 
-## Prerequisites
-
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
 
 ## Downloading
 
 ```
-git clone {repository URL}
+git clone https://github.com/Mario2280/nodejs2021Q4-service.git
+git checkout develop-ts
 ```
 
 ## Installing NPM modules
@@ -26,75 +23,33 @@ git clone {repository URL}
 npm install
 ```
 
-## Running application
+## Running application and tests
 
 ```
-npm start
+npm run dev
+npm run test 
 ```
 
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
-
-## Testing
-
-After application running open new terminal and enter:
-
-To run all tests without authorization
-
-```
-npm test
-```
-
-To run only one of all test suites (users, boards or tasks)
-
-```
-npm test <suite name>
-```
-
-To run all test with authorization
-
-```
-npm run test:auth
-```
-
-To run only specific test suite with authorization (users, boards or tasks)
-
-```
-npm run test:auth <suite name>
-```
-
-## Development
-
-If you're using VSCode, you can get a better developer experience from integration with [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions.
-
-### Auto-fix and format
+## Running lint
 
 ```
 npm run lint
 ```
 
-### Debugging in VSCode
-
-Press <kbd>F5</kbd> to debug.
-
-For more information, visit: https://code.visualstudio.com/docs/editor/debugging
-
 <a id="self-test"></a>
 
 
 # Самопроверка #
-Ваша оценка - 190 баллов 
+Ваша оценка - 260 баллов 
 Отзыв по пунктам ТЗ:
-Не выполненные/не засчитанные пункты:
-1) По плюс 10 баллов за каждый успешно пройденный тест при запуске npm run test. Здесь только отметить, что такие тесты есть, сумму нужно посчитать вручную. 
-Отзыв: +90 баллов
 Выполненные пункты:
-1) Код приложения, работающий с сущностью user разделен по модулям в соответствии с его назначением (к примеру: работа с запросом и ответом в *.router.js, бизнес-логика в *.service.js, работа с хранилищем данных в *.repository.js и т.п.) 
+1) По плюс 10 баллов за каждый успешно пройденный тест при запуске npm run test. Здесь только отметить, что такие тесты есть, сумму нужно посчитать вручную. 
 
-2) Код приложения, работающий с сущностью board разделен по модулям в соответствии с его назначением (к примеру: работа с запросом и ответом в *.router.js, бизнес-логика в *.service.js, работа с хранилищем данных в *.repository.js и т.п.) 
+2) В проекте настроен ESLint и имеется правило no-explicit-any 
 
-3) Код приложения, работающий с сущностью task разделен по модулям в соответствии с его назначением (к примеру: работа с запросом и ответом в *.router.js, бизнес-логика в *.service.js, работа с хранилищем данных в *.repository.js и т.п.) 
+3) В проекте имеется tsconfig и в нем noImplicitAny: true 
 
-4) REST сервис построен на базе фреймворка/библиотеки, отличной от Express и Nest.js, либо на чистом Node.js плюс 100 баллов 
+4) В проекте имеется tsconfig и в нем включена опция strict и при этом strict-related опции не перезаписаны в false 
+
+5) Рассчитываем баллы в соответствии с требованиями, баллы прибавляем вручную 
 

@@ -5,7 +5,9 @@ const data = config();
 
 const startServer = () => {
   try {
-    app.listen(data.PORT);
+    app.listen(data.PORT, '0.0.0.0');
+    console.log();
+    
   } catch (e) {
     app.log.error(e);
     process.exit(1);

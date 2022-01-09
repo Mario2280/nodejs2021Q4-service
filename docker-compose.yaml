@@ -1,0 +1,37 @@
+version: '3.8'
+
+volumes:
+  darabase:
+  logs:
+
+services:
+ notes:
+  build: .
+  ports:
+   - ${PORT}:${PORT}
+  environment:
+   - SERVER_PORT=${PORT}
+  restart: on-failure
+  depends_on:
+    - postgres
+  volumes:
+   - ./:/app/logs
+   - ./:/app
+  networks:
+      - network
+
+ postgres:
+    build: ./database
+    ports:
+    - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+    - darabase:/var/lib/postgresql/data
+    networks:
+      - network
+networks:
+  network:
+    driver: bridge
