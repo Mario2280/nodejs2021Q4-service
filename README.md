@@ -1,20 +1,19 @@
-# RS School REST service
+# RS School REST service Docker
 
 # *Инструкция*
 
  Полезыные ссылки
- + [Задание](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/typescript-basics.md)
- + [Критерии проверки](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/typescript-basics.md)
+ + [Задание](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/docker-basics.md)
+ + [Критерии проверки](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/docker-basics.md)
  + [Моя самопроверка](#self-test)
- + 20.12.2021	0:00 / 19.12.2021	22:00	
+ + 10.01.2022	00:00 / 09.01.2022	23:55	
 
 
 
 ## Downloading
 
 ```
-git clone https://github.com/Mario2280/nodejs2021Q4-service.git
-git checkout develop-ts
+git clone {repository URL}
 ```
 
 ## Installing NPM modules
@@ -23,33 +22,45 @@ git checkout develop-ts
 npm install
 ```
 
-## Running application and tests
+## Running application
 
 ```
-npm run dev
-npm run test 
+npm start
 ```
 
-## Running lint
+After starting the app on port (4000 as default) you can open
+in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
+For more information about OpenAPI/Swagger please visit https://swagger.io/.
+
+## Run application with docker
 
 ```
-npm run lint
+docker compose up --build
+```
+## Testing
+
+After application running open new terminal and enter:
+
+To run all tests without authorization
+
+```
+npm test
 ```
 
 <a id="self-test"></a>
 
 
 # Самопроверка #
-Ваша оценка - 260 баллов 
+Ваша оценка - 130 баллов 
 Отзыв по пунктам ТЗ:
 Выполненные пункты:
-1) По плюс 10 баллов за каждый успешно пройденный тест при запуске npm run test. Здесь только отметить, что такие тесты есть, сумму нужно посчитать вручную. 
+1) Наличие в Readme.md секции с инструкцией как запустить приложение 
 
-2) В проекте настроен ESLint и имеется правило no-explicit-any 
+2) Используется user-defined bridge 
 
-3) В проекте имеется tsconfig и в нем noImplicitAny: true 
+3) При возникновении ошибки контейнер перезапускается автоматически 
 
-4) В проекте имеется tsconfig и в нем включена опция strict и при этом strict-related опции не перезаписаны в false 
+4) Логи и файлы базы данных хранятся в volumes, а не в контейнере 
 
-5) Рассчитываем баллы в соответствии с требованиями, баллы прибавляем вручную 
+5) Итоговый docker-образ с приложением имеет размер меньше 300 мб 
 
