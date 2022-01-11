@@ -1,0 +1,9 @@
+.github
+.vscode
+doc
+node_modules
+.git
+logs
+build
+database
+.idea

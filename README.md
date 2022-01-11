@@ -1,9 +1,14 @@
-# RS School REST service
+# RS School REST service Docker
 
-## Prerequisites
+# *Инструкция*
 
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+ Полезыные ссылки
+ + [Задание](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/docker-basics.md)
+ + [Критерии проверки](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/docker-basics.md)
+ + [Моя самопроверка](#self-test)
+ + 10.01.2022	00:00 / 09.01.2022	23:55	
+
+
 
 ## Downloading
 
@@ -27,6 +32,11 @@ After starting the app on port (4000 as default) you can open
 in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
 For more information about OpenAPI/Swagger please visit https://swagger.io/.
 
+## Run application with docker
+
+```
+docker compose up --build
+```
 ## Testing
 
 After application running open new terminal and enter:
@@ -37,36 +47,20 @@ To run all tests without authorization
 npm test
 ```
 
-To run only one of all test suites (users, boards or tasks)
+<a id="self-test"></a>
 
-```
-npm test <suite name>
-```
 
-To run all test with authorization
+# Самопроверка #
+Ваша оценка - 130 баллов 
+Отзыв по пунктам ТЗ:
+Выполненные пункты:
+1) Наличие в Readme.md секции с инструкцией как запустить приложение 
 
-```
-npm run test:auth
-```
+2) Используется user-defined bridge 
 
-To run only specific test suite with authorization (users, boards or tasks)
+3) При возникновении ошибки контейнер перезапускается автоматически 
 
-```
-npm run test:auth <suite name>
-```
+4) Логи и файлы базы данных хранятся в volumes, а не в контейнере 
 
-## Development
+5) Итоговый docker-образ с приложением имеет размер меньше 300 мб 
 
-If you're using VSCode, you can get a better developer experience from integration with [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions.
-
-### Auto-fix and format
-
-```
-npm run lint
-```
-
-### Debugging in VSCode
-
-Press <kbd>F5</kbd> to debug.
-
-For more information, visit: https://code.visualstudio.com/docs/editor/debugging
