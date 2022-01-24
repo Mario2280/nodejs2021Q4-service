@@ -3,7 +3,7 @@ import {
   getBoards,
   getBoard,
   postBoard,
-  putBoard,
+  
   deleteBoard,
 } from '../../resources/services/board.memory.service';
 import { IBoard } from '../../resources/models/BoardModel';
@@ -33,14 +33,15 @@ const boardPost = (req: CustomRequest, res: FastifyReply) => {
  * @param res Default fastify response {@link FastifyReply}
  * @returns void
  */
-const boardGet = (req: CustomRequest, res: FastifyReply) => {
+const boardGet = async (req: CustomRequest, res: FastifyReply) => {
   res.header('Content-Type', 'application/json');
-  const result = getBoard(req.params.boardId);
-  if (result === 404) {
-    res.code(404).send();
-  } else {
-    res.send(result);
-  }
+  const result = await getBoard(req.params.boardId);
+  // if (result === 404) {
+  //   res.code(404).send();
+  // } else {
+  //   res.send(result);
+  // }
+  res.code(404).send();
 };
 /**
  *
@@ -48,8 +49,9 @@ const boardGet = (req: CustomRequest, res: FastifyReply) => {
  * @param res Default fastify response {@link FastifyReply}
  * @returns void
  */
-const boardGetAll = (req: FastifyRequest, res: FastifyReply) => {
-  res.send(getBoards());
+const boardGetAll = async (req: FastifyRequest, res: FastifyReply) => {
+  const result = await getBoards();
+  res.send(result);
 };
 /**
  *
@@ -59,7 +61,7 @@ const boardGetAll = (req: FastifyRequest, res: FastifyReply) => {
  */
 const boardPut = (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
-  res.send(putBoard(body));
+  //res.send(putBoard(body));
 };
 /**
  *

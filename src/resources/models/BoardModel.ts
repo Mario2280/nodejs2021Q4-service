@@ -1,6 +1,7 @@
 import * as uuid from 'uuid';
 
 interface IColum {
+  id:string,
   title: string;
   order: number;
 }
@@ -9,7 +10,7 @@ interface IBoard {
   id: string;
   title: string;
   order: number;
-  columns?: Array<IColum>;
+  columns?: IColum[];
 }
 
 class Board {
@@ -17,7 +18,6 @@ class Board {
 
   title: string;
 
-  order: number;
 
   columns: Array<IColum> | undefined;
 
@@ -25,9 +25,6 @@ class Board {
     this.id = uuid.v4();
     this.title = obj.title;
     this.order = obj.order;
-    if (obj.columns) {
-      this.columns = obj.columns;
-    }
   }
 
   /**
@@ -37,8 +34,8 @@ class Board {
    * @returns -> {@link IBoard} object
    */
   static toResponse(board: IBoard): IBoard {
-    const { id, title, order, columns } = board;
-    return { id, title, order, columns };
+    const { id, title, order } = board;
+    return { id, title, order};
   }
 }
 

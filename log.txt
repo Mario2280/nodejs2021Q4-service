@@ -1,240 +1,28 @@
-{"level":30,"time":1641759611260,"pid":36,"hostname":"925aacf10436","msg":"Server listening at http://0.0.0.0:4000"}
-{"level":30,"time":1641759631220,"pid":36,"hostname":"925aacf10436","reqId":"req-1","req":{"method":"GET","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48318},"msg":"incoming request"}
-{"level":30,"time":1641759631221,"pid":36,"hostname":"925aacf10436","reqId":"req-1","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759631227,"pid":36,"hostname":"925aacf10436","reqId":"req-1","res":{"statusCode":200},"responseTime":6.306699998676777,"msg":"request completed"}
-{"level":30,"time":1641759960173,"pid":36,"hostname":"001643110d53","msg":"Server listening at http://0.0.0.0:4000"}
-{"level":30,"time":1641759965890,"pid":36,"hostname":"001643110d53","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48324},"msg":"incoming request"}
-{"level":30,"time":1641759965892,"pid":36,"hostname":"001643110d53","reqId":"req-1","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965900,"pid":36,"hostname":"001643110d53","reqId":"req-1","res":{"statusCode":200},"responseTime":8.845499999821186,"msg":"request completed"}
-{"level":30,"time":1641759965913,"pid":36,"hostname":"001643110d53","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48326},"msg":"incoming request"}
-{"level":30,"time":1641759965917,"pid":36,"hostname":"001643110d53","reqId":"req-2","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1641759965917,"pid":36,"hostname":"001643110d53","reqId":"req-2","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965919,"pid":36,"hostname":"001643110d53","reqId":"req-2","res":{"statusCode":201},"responseTime":5.446100000292063,"msg":"request completed"}
-{"level":30,"time":1641759965924,"pid":36,"hostname":"001643110d53","reqId":"req-3","req":{"method":"GET","url":"/users/4ba6d9af-1fc2-45b1-afdd-56c5ff9060fd","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48328},"msg":"incoming request"}
-{"level":30,"time":1641759965925,"pid":36,"hostname":"001643110d53","reqId":"req-3","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965926,"pid":36,"hostname":"001643110d53","reqId":"req-3","res":{"statusCode":200},"responseTime":1.7806000001728535,"msg":"request completed"}
-{"level":30,"time":1641759965931,"pid":36,"hostname":"001643110d53","reqId":"req-4","req":{"method":"DELETE","url":"/users/4ba6d9af-1fc2-45b1-afdd-56c5ff9060fd","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48330},"msg":"incoming request"}
-{"level":30,"time":1641759965931,"pid":36,"hostname":"001643110d53","reqId":"req-4","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965933,"pid":36,"hostname":"001643110d53","reqId":"req-4","res":{"statusCode":200},"responseTime":1.2179000005126,"msg":"request completed"}
-{"level":30,"time":1641759965940,"pid":36,"hostname":"001643110d53","reqId":"req-5","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48332},"msg":"incoming request"}
-{"level":30,"time":1641759965941,"pid":36,"hostname":"001643110d53","reqId":"req-5","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1641759965942,"pid":36,"hostname":"001643110d53","reqId":"req-5","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965943,"pid":36,"hostname":"001643110d53","reqId":"req-5","res":{"statusCode":201},"responseTime":2.171899998560548,"msg":"request completed"}
-{"level":30,"time":1641759965949,"pid":36,"hostname":"001643110d53","reqId":"req-6","req":{"method":"DELETE","url":"/users/fc8330ff-7bce-496a-836f-29ef71abdb33","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48334},"msg":"incoming request"}
-{"level":30,"time":1641759965950,"pid":36,"hostname":"001643110d53","reqId":"req-6","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965951,"pid":36,"hostname":"001643110d53","reqId":"req-6","res":{"statusCode":200},"responseTime":1.0948000010102987,"msg":"request completed"}
-{"level":30,"time":1641759965959,"pid":36,"hostname":"001643110d53","reqId":"req-7","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48336},"msg":"incoming request"}
-{"level":30,"time":1641759965960,"pid":36,"hostname":"001643110d53","reqId":"req-7","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1641759965960,"pid":36,"hostname":"001643110d53","reqId":"req-7","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965961,"pid":36,"hostname":"001643110d53","reqId":"req-7","res":{"statusCode":201},"responseTime":1.2627000007778406,"msg":"request completed"}
-{"level":30,"time":1641759965965,"pid":36,"hostname":"001643110d53","reqId":"req-8","req":{"method":"PUT","url":"/users/ec28c07b-6823-4220-8dda-e01e628bd8d9","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48338},"msg":"incoming request"}
-{"level":30,"time":1641759965966,"pid":36,"hostname":"001643110d53","reqId":"req-8","body":{"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"ec28c07b-6823-4220-8dda-e01e628bd8d9"},"msg":"parsed body"}
-{"level":30,"time":1641759965966,"pid":36,"hostname":"001643110d53","reqId":"req-8","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965967,"pid":36,"hostname":"001643110d53","reqId":"req-8","res":{"statusCode":200},"responseTime":1.5828999988734722,"msg":"request completed"}
-{"level":30,"time":1641759965971,"pid":36,"hostname":"001643110d53","reqId":"req-9","req":{"method":"GET","url":"/users/ec28c07b-6823-4220-8dda-e01e628bd8d9","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48340},"msg":"incoming request"}
-{"level":30,"time":1641759965972,"pid":36,"hostname":"001643110d53","reqId":"req-9","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965972,"pid":36,"hostname":"001643110d53","reqId":"req-9","res":{"statusCode":200},"responseTime":0.7193999998271465,"msg":"request completed"}
-{"level":30,"time":1641759965976,"pid":36,"hostname":"001643110d53","reqId":"req-a","req":{"method":"DELETE","url":"/users/ec28c07b-6823-4220-8dda-e01e628bd8d9","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48342},"msg":"incoming request"}
-{"level":30,"time":1641759965976,"pid":36,"hostname":"001643110d53","reqId":"req-a","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965977,"pid":36,"hostname":"001643110d53","reqId":"req-a","res":{"statusCode":200},"responseTime":0.7891999986022711,"msg":"request completed"}
-{"level":30,"time":1641759965981,"pid":36,"hostname":"001643110d53","reqId":"req-b","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48344},"msg":"incoming request"}
-{"level":30,"time":1641759965981,"pid":36,"hostname":"001643110d53","reqId":"req-b","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1641759965982,"pid":36,"hostname":"001643110d53","reqId":"req-b","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965982,"pid":36,"hostname":"001643110d53","reqId":"req-b","res":{"statusCode":201},"responseTime":0.8936000000685453,"msg":"request completed"}
-{"level":30,"time":1641759965986,"pid":36,"hostname":"001643110d53","reqId":"req-c","req":{"method":"DELETE","url":"/users/29118121-bbc7-472d-967f-a1b626a93938","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48346},"msg":"incoming request"}
-{"level":30,"time":1641759965986,"pid":36,"hostname":"001643110d53","reqId":"req-c","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965986,"pid":36,"hostname":"001643110d53","reqId":"req-c","res":{"statusCode":200},"responseTime":0.5559999998658895,"msg":"request completed"}
-{"level":30,"time":1641759965991,"pid":36,"hostname":"001643110d53","reqId":"req-d","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48348},"msg":"incoming request"}
-{"level":30,"time":1641759965992,"pid":36,"hostname":"001643110d53","reqId":"req-d","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1641759965992,"pid":36,"hostname":"001643110d53","reqId":"req-d","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759965993,"pid":36,"hostname":"001643110d53","reqId":"req-d","res":{"statusCode":201},"responseTime":1.200900001451373,"msg":"request completed"}
-{"level":30,"time":1641759965997,"pid":36,"hostname":"001643110d53","reqId":"req-e","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48350},"msg":"incoming request"}
-{"level":30,"time":1641759965998,"pid":36,"hostname":"001643110d53","reqId":"req-e","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759965998,"pid":36,"hostname":"001643110d53","reqId":"req-e","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966000,"pid":36,"hostname":"001643110d53","reqId":"req-e","res":{"statusCode":201},"responseTime":2.377599999308586,"msg":"request completed"}
-{"level":30,"time":1641759966006,"pid":36,"hostname":"001643110d53","reqId":"req-f","req":{"method":"POST","url":"/boards/0b1ec0c8-194f-4510-8ee0-db0e6991af9a/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48352},"msg":"incoming request"}
-{"level":30,"time":1641759966007,"pid":36,"hostname":"001643110d53","reqId":"req-f","body":{"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"4053a0a4-ece4-4ea1-8d9a-9899d5016bad","boardId":"0b1ec0c8-194f-4510-8ee0-db0e6991af9a"},"msg":"parsed body"}
-{"level":30,"time":1641759966008,"pid":36,"hostname":"001643110d53","reqId":"req-f","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966008,"pid":36,"hostname":"001643110d53","reqId":"req-f","res":{"statusCode":201},"responseTime":1.6842999998480082,"msg":"request completed"}
-{"level":30,"time":1641759966009,"pid":36,"hostname":"001643110d53","reqId":"req-g","req":{"method":"POST","url":"/boards/0b1ec0c8-194f-4510-8ee0-db0e6991af9a/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48354},"msg":"incoming request"}
-{"level":30,"time":1641759966010,"pid":36,"hostname":"001643110d53","reqId":"req-g","body":{"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"4053a0a4-ece4-4ea1-8d9a-9899d5016bad","boardId":"0b1ec0c8-194f-4510-8ee0-db0e6991af9a"},"msg":"parsed body"}
-{"level":30,"time":1641759966010,"pid":36,"hostname":"001643110d53","reqId":"req-g","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966010,"pid":36,"hostname":"001643110d53","reqId":"req-g","res":{"statusCode":201},"responseTime":0.9604000002145767,"msg":"request completed"}
-{"level":30,"time":1641759966013,"pid":36,"hostname":"001643110d53","reqId":"req-h","req":{"method":"DELETE","url":"/users/4053a0a4-ece4-4ea1-8d9a-9899d5016bad","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48356},"msg":"incoming request"}
-{"level":30,"time":1641759966013,"pid":36,"hostname":"001643110d53","reqId":"req-h","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966014,"pid":36,"hostname":"001643110d53","reqId":"req-h","res":{"statusCode":200},"responseTime":0.5616999994963408,"msg":"request completed"}
-{"level":30,"time":1641759966017,"pid":36,"hostname":"001643110d53","reqId":"req-i","req":{"method":"GET","url":"/boards/0b1ec0c8-194f-4510-8ee0-db0e6991af9a/tasks/c3d7215b-4bfa-4cfe-8c12-b870fbac1e02","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48358},"msg":"incoming request"}
-{"level":30,"time":1641759966017,"pid":36,"hostname":"001643110d53","reqId":"req-i","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966018,"pid":36,"hostname":"001643110d53","reqId":"req-i","res":{"statusCode":200},"responseTime":0.8459000010043383,"msg":"request completed"}
-{"level":30,"time":1641759966020,"pid":36,"hostname":"001643110d53","reqId":"req-j","req":{"method":"GET","url":"/boards/0b1ec0c8-194f-4510-8ee0-db0e6991af9a/tasks/247b8d59-7131-43e4-82e0-ddabe9c2b884","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48360},"msg":"incoming request"}
-{"level":30,"time":1641759966020,"pid":36,"hostname":"001643110d53","reqId":"req-j","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966021,"pid":36,"hostname":"001643110d53","reqId":"req-j","res":{"statusCode":200},"responseTime":0.5629999991506338,"msg":"request completed"}
-{"level":30,"time":1641759966024,"pid":36,"hostname":"001643110d53","reqId":"req-k","req":{"method":"DELETE","url":"/boards/0b1ec0c8-194f-4510-8ee0-db0e6991af9a/tasks/247b8d59-7131-43e4-82e0-ddabe9c2b884","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48364},"msg":"incoming request"}
-{"level":30,"time":1641759966024,"pid":36,"hostname":"001643110d53","reqId":"req-k","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966025,"pid":36,"hostname":"001643110d53","reqId":"req-k","res":{"statusCode":200},"responseTime":0.9254999998956919,"msg":"request completed"}
-{"level":30,"time":1641759966026,"pid":36,"hostname":"001643110d53","reqId":"req-l","req":{"method":"DELETE","url":"/boards/0b1ec0c8-194f-4510-8ee0-db0e6991af9a/tasks/c3d7215b-4bfa-4cfe-8c12-b870fbac1e02","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48362},"msg":"incoming request"}
-{"level":30,"time":1641759966026,"pid":36,"hostname":"001643110d53","reqId":"req-l","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966027,"pid":36,"hostname":"001643110d53","reqId":"req-l","res":{"statusCode":200},"responseTime":0.7632999997586012,"msg":"request completed"}
-{"level":30,"time":1641759966030,"pid":36,"hostname":"001643110d53","reqId":"req-m","req":{"method":"DELETE","url":"/boards/0b1ec0c8-194f-4510-8ee0-db0e6991af9a","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48366},"msg":"incoming request"}
-{"level":30,"time":1641759966031,"pid":36,"hostname":"001643110d53","reqId":"req-m","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966031,"pid":36,"hostname":"001643110d53","reqId":"req-m","res":{"statusCode":200},"responseTime":0.9020000007003546,"msg":"request completed"}
-{"level":30,"time":1641759966289,"pid":36,"hostname":"001643110d53","reqId":"req-n","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48368},"msg":"incoming request"}
-{"level":30,"time":1641759966290,"pid":36,"hostname":"001643110d53","reqId":"req-n","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759966290,"pid":36,"hostname":"001643110d53","reqId":"req-n","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966292,"pid":36,"hostname":"001643110d53","reqId":"req-n","res":{"statusCode":201},"responseTime":1.9951999988406897,"msg":"request completed"}
-{"level":30,"time":1641759966313,"pid":36,"hostname":"001643110d53","reqId":"req-o","req":{"method":"GET","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48370},"msg":"incoming request"}
-{"level":30,"time":1641759966313,"pid":36,"hostname":"001643110d53","reqId":"req-o","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966314,"pid":36,"hostname":"001643110d53","reqId":"req-o","res":{"statusCode":200},"responseTime":0.6753000002354383,"msg":"request completed"}
-{"level":30,"time":1641759966321,"pid":36,"hostname":"001643110d53","reqId":"req-p","req":{"method":"GET","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48372},"msg":"incoming request"}
-{"level":30,"time":1641759966322,"pid":36,"hostname":"001643110d53","reqId":"req-p","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966322,"pid":36,"hostname":"001643110d53","reqId":"req-p","res":{"statusCode":200},"responseTime":0.5160000007599592,"msg":"request completed"}
-{"level":30,"time":1641759966325,"pid":36,"hostname":"001643110d53","reqId":"req-q","req":{"method":"GET","url":"/boards/a64b9c98-c2e6-4622-a216-3281bddaf188","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48374},"msg":"incoming request"}
-{"level":30,"time":1641759966326,"pid":36,"hostname":"001643110d53","reqId":"req-q","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966327,"pid":36,"hostname":"001643110d53","reqId":"req-q","res":{"statusCode":200},"responseTime":1.347799999639392,"msg":"request completed"}
-{"level":30,"time":1641759966337,"pid":36,"hostname":"001643110d53","reqId":"req-r","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48376},"msg":"incoming request"}
-{"level":30,"time":1641759966338,"pid":36,"hostname":"001643110d53","reqId":"req-r","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759966338,"pid":36,"hostname":"001643110d53","reqId":"req-r","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966339,"pid":36,"hostname":"001643110d53","reqId":"req-r","res":{"statusCode":201},"responseTime":1.2465000003576279,"msg":"request completed"}
-{"level":30,"time":1641759966343,"pid":36,"hostname":"001643110d53","reqId":"req-s","req":{"method":"DELETE","url":"/boards/7b8f2418-9b77-4738-aa2e-f60819987323","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48378},"msg":"incoming request"}
-{"level":30,"time":1641759966343,"pid":36,"hostname":"001643110d53","reqId":"req-s","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966344,"pid":36,"hostname":"001643110d53","reqId":"req-s","res":{"statusCode":200},"responseTime":0.9044000003486872,"msg":"request completed"}
-{"level":30,"time":1641759966355,"pid":36,"hostname":"001643110d53","reqId":"req-t","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48380},"msg":"incoming request"}
-{"level":30,"time":1641759966356,"pid":36,"hostname":"001643110d53","reqId":"req-t","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759966356,"pid":36,"hostname":"001643110d53","reqId":"req-t","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966357,"pid":36,"hostname":"001643110d53","reqId":"req-t","res":{"statusCode":201},"responseTime":1.3747000005096197,"msg":"request completed"}
-{"level":30,"time":1641759966362,"pid":36,"hostname":"001643110d53","reqId":"req-u","req":{"method":"PUT","url":"/boards/f8078469-f352-4a16-b1c6-1aa0c6db0e04","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48382},"msg":"incoming request"}
-{"level":30,"time":1641759966364,"pid":36,"hostname":"001643110d53","reqId":"req-u","body":{"id":"f8078469-f352-4a16-b1c6-1aa0c6db0e04","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759966365,"pid":36,"hostname":"001643110d53","reqId":"req-u","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966366,"pid":36,"hostname":"001643110d53","reqId":"req-u","res":{"statusCode":200},"responseTime":3.5896000005304813,"msg":"request completed"}
-{"level":30,"time":1641759966374,"pid":36,"hostname":"001643110d53","reqId":"req-v","req":{"method":"GET","url":"/boards/f8078469-f352-4a16-b1c6-1aa0c6db0e04","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48384},"msg":"incoming request"}
-{"level":30,"time":1641759966374,"pid":36,"hostname":"001643110d53","reqId":"req-v","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966375,"pid":36,"hostname":"001643110d53","reqId":"req-v","res":{"statusCode":200},"responseTime":0.8132000006735325,"msg":"request completed"}
-{"level":30,"time":1641759966379,"pid":36,"hostname":"001643110d53","reqId":"req-w","req":{"method":"DELETE","url":"/boards/f8078469-f352-4a16-b1c6-1aa0c6db0e04","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48386},"msg":"incoming request"}
-{"level":30,"time":1641759966380,"pid":36,"hostname":"001643110d53","reqId":"req-w","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966380,"pid":36,"hostname":"001643110d53","reqId":"req-w","res":{"statusCode":200},"responseTime":0.8017999995499849,"msg":"request completed"}
-{"level":30,"time":1641759966386,"pid":36,"hostname":"001643110d53","reqId":"req-x","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48388},"msg":"incoming request"}
-{"level":30,"time":1641759966387,"pid":36,"hostname":"001643110d53","reqId":"req-x","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759966387,"pid":36,"hostname":"001643110d53","reqId":"req-x","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966388,"pid":36,"hostname":"001643110d53","reqId":"req-x","res":{"statusCode":201},"responseTime":1.3627000004053116,"msg":"request completed"}
-{"level":30,"time":1641759966391,"pid":36,"hostname":"001643110d53","reqId":"req-y","req":{"method":"DELETE","url":"/boards/2ea62c5d-1465-49c9-9bc4-37c888884f8e","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48390},"msg":"incoming request"}
-{"level":30,"time":1641759966392,"pid":36,"hostname":"001643110d53","reqId":"req-y","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966392,"pid":36,"hostname":"001643110d53","reqId":"req-y","res":{"statusCode":200},"responseTime":0.7055000010877848,"msg":"request completed"}
-{"level":30,"time":1641759966397,"pid":36,"hostname":"001643110d53","reqId":"req-z","req":{"method":"GET","url":"/boards/2ea62c5d-1465-49c9-9bc4-37c888884f8e","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48392},"msg":"incoming request"}
-{"level":30,"time":1641759966398,"pid":36,"hostname":"001643110d53","reqId":"req-z","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966399,"pid":36,"hostname":"001643110d53","reqId":"req-z","res":{"statusCode":404},"responseTime":1.0457000005990267,"msg":"request completed"}
-{"level":30,"time":1641759966404,"pid":36,"hostname":"001643110d53","reqId":"req-10","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48394},"msg":"incoming request"}
-{"level":30,"time":1641759966405,"pid":36,"hostname":"001643110d53","reqId":"req-10","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759966406,"pid":36,"hostname":"001643110d53","reqId":"req-10","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966407,"pid":36,"hostname":"001643110d53","reqId":"req-10","res":{"statusCode":201},"responseTime":2.0873000007122755,"msg":"request completed"}
-{"level":30,"time":1641759966419,"pid":36,"hostname":"001643110d53","reqId":"req-11","req":{"method":"POST","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48402},"msg":"incoming request"}
-{"level":30,"time":1641759966420,"pid":36,"hostname":"001643110d53","reqId":"req-11","body":{"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"0dfcabf6-1b92-4db8-ab4b-477595a6982d","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966420,"pid":36,"hostname":"001643110d53","reqId":"req-11","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966421,"pid":36,"hostname":"001643110d53","reqId":"req-11","res":{"statusCode":201},"responseTime":1.0120000001043081,"msg":"request completed"}
-{"level":30,"time":1641759966421,"pid":36,"hostname":"001643110d53","reqId":"req-12","req":{"method":"POST","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48396},"msg":"incoming request"}
-{"level":30,"time":1641759966422,"pid":36,"hostname":"001643110d53","reqId":"req-12","body":{"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"0dfcabf6-1b92-4db8-ab4b-477595a6982d","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966422,"pid":36,"hostname":"001643110d53","reqId":"req-12","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966422,"pid":36,"hostname":"001643110d53","reqId":"req-12","res":{"statusCode":201},"responseTime":0.9410999994724989,"msg":"request completed"}
-{"level":30,"time":1641759966423,"pid":36,"hostname":"001643110d53","reqId":"req-13","req":{"method":"POST","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48398},"msg":"incoming request"}
-{"level":30,"time":1641759966423,"pid":36,"hostname":"001643110d53","reqId":"req-13","body":{"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"0dfcabf6-1b92-4db8-ab4b-477595a6982d","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966424,"pid":36,"hostname":"001643110d53","reqId":"req-13","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966424,"pid":36,"hostname":"001643110d53","reqId":"req-13","res":{"statusCode":201},"responseTime":1.3184000011533499,"msg":"request completed"}
-{"level":30,"time":1641759966426,"pid":36,"hostname":"001643110d53","reqId":"req-14","req":{"method":"POST","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48400},"msg":"incoming request"}
-{"level":30,"time":1641759966427,"pid":36,"hostname":"001643110d53","reqId":"req-14","body":{"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"0dfcabf6-1b92-4db8-ab4b-477595a6982d","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966427,"pid":36,"hostname":"001643110d53","reqId":"req-14","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966428,"pid":36,"hostname":"001643110d53","reqId":"req-14","res":{"statusCode":201},"responseTime":1.363400001078844,"msg":"request completed"}
-{"level":30,"time":1641759966429,"pid":36,"hostname":"001643110d53","reqId":"req-15","req":{"method":"POST","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48404},"msg":"incoming request"}
-{"level":30,"time":1641759966430,"pid":36,"hostname":"001643110d53","reqId":"req-15","body":{"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"0dfcabf6-1b92-4db8-ab4b-477595a6982d","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966431,"pid":36,"hostname":"001643110d53","reqId":"req-15","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966431,"pid":36,"hostname":"001643110d53","reqId":"req-15","res":{"statusCode":201},"responseTime":1.3773999996483326,"msg":"request completed"}
-{"level":30,"time":1641759966446,"pid":36,"hostname":"001643110d53","reqId":"req-16","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/0280576d-d2fe-457f-ab91-f559509f31b2","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48406},"msg":"incoming request"}
-{"level":30,"time":1641759966446,"pid":36,"hostname":"001643110d53","reqId":"req-16","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966447,"pid":36,"hostname":"001643110d53","reqId":"req-16","res":{"statusCode":200},"responseTime":0.8486999999731779,"msg":"request completed"}
-{"level":30,"time":1641759966448,"pid":36,"hostname":"001643110d53","reqId":"req-17","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/4889add8-aa4d-47a2-b336-9a2629c0808a","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48410},"msg":"incoming request"}
-{"level":30,"time":1641759966448,"pid":36,"hostname":"001643110d53","reqId":"req-17","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966449,"pid":36,"hostname":"001643110d53","reqId":"req-17","res":{"statusCode":200},"responseTime":0.6849000006914139,"msg":"request completed"}
-{"level":30,"time":1641759966449,"pid":36,"hostname":"001643110d53","reqId":"req-18","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/ece35fa6-23d8-49f8-8b81-e7274ba97e57","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48408},"msg":"incoming request"}
-{"level":30,"time":1641759966450,"pid":36,"hostname":"001643110d53","reqId":"req-18","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966450,"pid":36,"hostname":"001643110d53","reqId":"req-18","res":{"statusCode":200},"responseTime":0.5194000005722046,"msg":"request completed"}
-{"level":30,"time":1641759966451,"pid":36,"hostname":"001643110d53","reqId":"req-19","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/ed7fb7dc-9901-4086-9083-1201c4240f4b","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48414},"msg":"incoming request"}
-{"level":30,"time":1641759966451,"pid":36,"hostname":"001643110d53","reqId":"req-19","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966451,"pid":36,"hostname":"001643110d53","reqId":"req-19","res":{"statusCode":200},"responseTime":0.4473999999463558,"msg":"request completed"}
-{"level":30,"time":1641759966452,"pid":36,"hostname":"001643110d53","reqId":"req-1a","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/92974d0e-108a-4391-ba61-adbcf6682792","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48412},"msg":"incoming request"}
-{"level":30,"time":1641759966452,"pid":36,"hostname":"001643110d53","reqId":"req-1a","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966452,"pid":36,"hostname":"001643110d53","reqId":"req-1a","res":{"statusCode":200},"responseTime":0.3253000006079674,"msg":"request completed"}
-{"level":30,"time":1641759966455,"pid":36,"hostname":"001643110d53","reqId":"req-1b","req":{"method":"DELETE","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48416},"msg":"incoming request"}
-{"level":30,"time":1641759966455,"pid":36,"hostname":"001643110d53","reqId":"req-1b","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966455,"pid":36,"hostname":"001643110d53","reqId":"req-1b","res":{"statusCode":200},"responseTime":0.3760000001639128,"msg":"request completed"}
-{"level":30,"time":1641759966459,"pid":36,"hostname":"001643110d53","reqId":"req-1c","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/ece35fa6-23d8-49f8-8b81-e7274ba97e57","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48420},"msg":"incoming request"}
-{"level":30,"time":1641759966459,"pid":36,"hostname":"001643110d53","reqId":"req-1c","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966460,"pid":36,"hostname":"001643110d53","reqId":"req-1c","res":{"statusCode":404},"responseTime":0.380299998447299,"msg":"request completed"}
-{"level":30,"time":1641759966460,"pid":36,"hostname":"001643110d53","reqId":"req-1d","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/0280576d-d2fe-457f-ab91-f559509f31b2","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48418},"msg":"incoming request"}
-{"level":30,"time":1641759966461,"pid":36,"hostname":"001643110d53","reqId":"req-1d","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966461,"pid":36,"hostname":"001643110d53","reqId":"req-1d","res":{"statusCode":404},"responseTime":0.31479999981820583,"msg":"request completed"}
-{"level":30,"time":1641759966461,"pid":36,"hostname":"001643110d53","reqId":"req-1e","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/4889add8-aa4d-47a2-b336-9a2629c0808a","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48424},"msg":"incoming request"}
-{"level":30,"time":1641759966461,"pid":36,"hostname":"001643110d53","reqId":"req-1e","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966462,"pid":36,"hostname":"001643110d53","reqId":"req-1e","res":{"statusCode":404},"responseTime":0.33650000020861626,"msg":"request completed"}
-{"level":30,"time":1641759966462,"pid":36,"hostname":"001643110d53","reqId":"req-1f","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/92974d0e-108a-4391-ba61-adbcf6682792","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48422},"msg":"incoming request"}
-{"level":30,"time":1641759966462,"pid":36,"hostname":"001643110d53","reqId":"req-1f","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966463,"pid":36,"hostname":"001643110d53","reqId":"req-1f","res":{"statusCode":404},"responseTime":0.28299999982118607,"msg":"request completed"}
-{"level":30,"time":1641759966463,"pid":36,"hostname":"001643110d53","reqId":"req-1g","req":{"method":"GET","url":"/boards/0dfcabf6-1b92-4db8-ab4b-477595a6982d/tasks/ed7fb7dc-9901-4086-9083-1201c4240f4b","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48426},"msg":"incoming request"}
-{"level":30,"time":1641759966464,"pid":36,"hostname":"001643110d53","reqId":"req-1g","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966464,"pid":36,"hostname":"001643110d53","reqId":"req-1g","res":{"statusCode":404},"responseTime":0.5,"msg":"request completed"}
-{"level":30,"time":1641759966467,"pid":36,"hostname":"001643110d53","reqId":"req-1h","req":{"method":"DELETE","url":"/boards/a64b9c98-c2e6-4622-a216-3281bddaf188","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48428},"msg":"incoming request"}
-{"level":30,"time":1641759966467,"pid":36,"hostname":"001643110d53","reqId":"req-1h","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966467,"pid":36,"hostname":"001643110d53","reqId":"req-1h","res":{"statusCode":200},"responseTime":0.4157999996095896,"msg":"request completed"}
-{"level":30,"time":1641759966695,"pid":36,"hostname":"001643110d53","reqId":"req-1i","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48430},"msg":"incoming request"}
-{"level":30,"time":1641759966696,"pid":36,"hostname":"001643110d53","reqId":"req-1i","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1641759966696,"pid":36,"hostname":"001643110d53","reqId":"req-1i","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966696,"pid":36,"hostname":"001643110d53","reqId":"req-1i","res":{"statusCode":201},"responseTime":0.9568999987095594,"msg":"request completed"}
-{"level":30,"time":1641759966701,"pid":36,"hostname":"001643110d53","reqId":"req-1j","req":{"method":"POST","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48432},"msg":"incoming request"}
-{"level":30,"time":1641759966702,"pid":36,"hostname":"001643110d53","reqId":"req-1j","body":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966702,"pid":36,"hostname":"001643110d53","reqId":"req-1j","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966703,"pid":36,"hostname":"001643110d53","reqId":"req-1j","res":{"statusCode":201},"responseTime":1.0289000011980534,"msg":"request completed"}
-{"level":30,"time":1641759966719,"pid":36,"hostname":"001643110d53","reqId":"req-1k","req":{"method":"GET","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48434},"msg":"incoming request"}
-{"level":30,"time":1641759966719,"pid":36,"hostname":"001643110d53","reqId":"req-1k","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966720,"pid":36,"hostname":"001643110d53","reqId":"req-1k","res":{"statusCode":200},"responseTime":0.5813999995589256,"msg":"request completed"}
-{"level":30,"time":1641759966731,"pid":36,"hostname":"001643110d53","reqId":"req-1l","req":{"method":"GET","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48436},"msg":"incoming request"}
-{"level":30,"time":1641759966733,"pid":36,"hostname":"001643110d53","reqId":"req-1l","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966735,"pid":36,"hostname":"001643110d53","reqId":"req-1l","res":{"statusCode":200},"responseTime":2.6490000002086163,"msg":"request completed"}
-{"level":30,"time":1641759966744,"pid":36,"hostname":"001643110d53","reqId":"req-1m","req":{"method":"GET","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks/ec8ee37b-b964-4c70-95bf-3c09c6d7446e","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48438},"msg":"incoming request"}
-{"level":30,"time":1641759966745,"pid":36,"hostname":"001643110d53","reqId":"req-1m","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966746,"pid":36,"hostname":"001643110d53","reqId":"req-1m","res":{"statusCode":200},"responseTime":0.9204000011086464,"msg":"request completed"}
-{"level":30,"time":1641759966753,"pid":36,"hostname":"001643110d53","reqId":"req-1n","req":{"method":"POST","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48440},"msg":"incoming request"}
-{"level":30,"time":1641759966754,"pid":36,"hostname":"001643110d53","reqId":"req-1n","body":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966754,"pid":36,"hostname":"001643110d53","reqId":"req-1n","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966755,"pid":36,"hostname":"001643110d53","reqId":"req-1n","res":{"statusCode":201},"responseTime":1.2236000001430511,"msg":"request completed"}
-{"level":30,"time":1641759966759,"pid":36,"hostname":"001643110d53","reqId":"req-1o","req":{"method":"DELETE","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks/7e27f91d-a342-4771-93ce-1238ed70b257","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48442},"msg":"incoming request"}
-{"level":30,"time":1641759966760,"pid":36,"hostname":"001643110d53","reqId":"req-1o","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966760,"pid":36,"hostname":"001643110d53","reqId":"req-1o","res":{"statusCode":200},"responseTime":0.7115000002086163,"msg":"request completed"}
-{"level":30,"time":1641759966765,"pid":36,"hostname":"001643110d53","reqId":"req-1p","req":{"method":"POST","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48444},"msg":"incoming request"}
-{"level":30,"time":1641759966765,"pid":36,"hostname":"001643110d53","reqId":"req-1p","body":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1641759966766,"pid":36,"hostname":"001643110d53","reqId":"req-1p","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966766,"pid":36,"hostname":"001643110d53","reqId":"req-1p","res":{"statusCode":201},"responseTime":0.974099999293685,"msg":"request completed"}
-{"level":30,"time":1641759966771,"pid":36,"hostname":"001643110d53","reqId":"req-1q","req":{"method":"PUT","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks/28752ac7-38f1-4b97-bfa2-98d5f32bbbe6","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48446},"msg":"incoming request"}
-{"level":30,"time":1641759966772,"pid":36,"hostname":"001643110d53","reqId":"req-1q","body":{"id":"28752ac7-38f1-4b97-bfa2-98d5f32bbbe6","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":"","columnId":"","boardId":"131b6358-829b-42c2-86d9-ab6a8b1a6e28"},"msg":"parsed body"}
-{"level":30,"time":1641759966772,"pid":36,"hostname":"001643110d53","reqId":"req-1q","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966773,"pid":36,"hostname":"001643110d53","reqId":"req-1q","res":{"statusCode":200},"responseTime":2.218700001016259,"msg":"request completed"}
-{"level":30,"time":1641759966778,"pid":36,"hostname":"001643110d53","reqId":"req-1r","req":{"method":"GET","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks/28752ac7-38f1-4b97-bfa2-98d5f32bbbe6","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48448},"msg":"incoming request"}
-{"level":30,"time":1641759966778,"pid":36,"hostname":"001643110d53","reqId":"req-1r","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966779,"pid":36,"hostname":"001643110d53","reqId":"req-1r","res":{"statusCode":200},"responseTime":0.5720000006258488,"msg":"request completed"}
-{"level":30,"time":1641759966785,"pid":36,"hostname":"001643110d53","reqId":"req-1s","req":{"method":"GET","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks/ec8ee37b-b964-4c70-95bf-3c09c6d7446e","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48450},"msg":"incoming request"}
-{"level":30,"time":1641759966785,"pid":36,"hostname":"001643110d53","reqId":"req-1s","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966785,"pid":36,"hostname":"001643110d53","reqId":"req-1s","res":{"statusCode":200},"responseTime":0.4945000000298023,"msg":"request completed"}
-{"level":30,"time":1641759966788,"pid":36,"hostname":"001643110d53","reqId":"req-1t","req":{"method":"DELETE","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks/ec8ee37b-b964-4c70-95bf-3c09c6d7446e","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48452},"msg":"incoming request"}
-{"level":30,"time":1641759966788,"pid":36,"hostname":"001643110d53","reqId":"req-1t","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966789,"pid":36,"hostname":"001643110d53","reqId":"req-1t","res":{"statusCode":200},"responseTime":0.4002999998629093,"msg":"request completed"}
-{"level":30,"time":1641759966791,"pid":36,"hostname":"001643110d53","reqId":"req-1u","req":{"method":"GET","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28/tasks/ec8ee37b-b964-4c70-95bf-3c09c6d7446e","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48454},"msg":"incoming request"}
-{"level":30,"time":1641759966792,"pid":36,"hostname":"001643110d53","reqId":"req-1u","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966793,"pid":36,"hostname":"001643110d53","reqId":"req-1u","res":{"statusCode":404},"responseTime":0.713000001385808,"msg":"request completed"}
-{"level":30,"time":1641759966797,"pid":36,"hostname":"001643110d53","reqId":"req-1v","req":{"method":"DELETE","url":"/boards/131b6358-829b-42c2-86d9-ab6a8b1a6e28","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48456},"msg":"incoming request"}
-{"level":30,"time":1641759966797,"pid":36,"hostname":"001643110d53","reqId":"req-1v","query":{},"msg":"parsed query"}
-{"level":30,"time":1641759966797,"pid":36,"hostname":"001643110d53","reqId":"req-1v","res":{"statusCode":200},"responseTime":0.45209999941289425,"msg":"request completed"}
-{"level":30,"time":1641760663467,"pid":36,"hostname":"0e0e6909ee36","msg":"Server listening at http://0.0.0.0:4000"}
-{"level":30,"time":1641760714606,"pid":53,"hostname":"0e0e6909ee36","msg":"Server listening at http://0.0.0.0:4000"}
-{"level":30,"time":1641760739331,"pid":141,"hostname":"0e0e6909ee36","msg":"Server listening at http://0.0.0.0:4000"}
-{"level":30,"time":1641760935374,"pid":338,"hostname":"0e0e6909ee36","msg":"Server listening at http://0.0.0.0:4000"}
-{"level":30,"time":1641760939356,"pid":338,"hostname":"0e0e6909ee36","reqId":"req-1","req":{"method":"GET","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48468},"msg":"incoming request"}
-{"level":30,"time":1641760939357,"pid":338,"hostname":"0e0e6909ee36","reqId":"req-1","query":{},"msg":"parsed query"}
-{"level":50,"time":1641760939358,"pid":338,"hostname":"0e0e6909ee36","reqId":"req-1","req":{"method":"GET","url":"/boards","hostname":"localhost:4000","remoteAddress":"172.22.0.1","remotePort":48468},"res":{"statusCode":500},"err":{"type":"Error","message":"ASD","stack":"Error: ASD\n    at getBoards (/app/src/resources/services/board.memory.service.ts:7:9)\n    at Object.boardGetAll (/app/src/constrollers/handlers/forBoards.ts:52:21)\n    at preHandlerCallback (/app/node_modules/fastify/lib/handleRequest.js:126:28)\n    at next (/app/node_modules/fastify/lib/hooks.js:158:7)\n    at Object.<anonymous> (/app/src/app.ts:24:5)\n    at hookIterator (/app/node_modules/fastify/lib/hooks.js:237:10)\n    at next (/app/node_modules/fastify/lib/hooks.js:164:16)\n    at hookRunner (/app/node_modules/fastify/lib/hooks.js:187:3)\n    at preValidationCallback (/app/node_modules/fastify/lib/handleRequest.js:101:5)\n    at handler (/app/node_modules/fastify/lib/handleRequest.js:72:7)"},"msg":"ASD"}
-{"level":30,"time":1641760939404,"pid":338,"hostname":"0e0e6909ee36","reqId":"req-1","res":{"statusCode":500},"responseTime":46.54079999960959,"msg":"request completed"}
-{"level":30,"time":1641760984157,"pid":367,"hostname":"0e0e6909ee36","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1642869357504,"pid":16828,"hostname":"DESKTOP-DSLMJV2","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1642869401652,"pid":10376,"hostname":"DESKTOP-DSLMJV2","msg":"Server listening at http://0.0.0.0:8000"}
+{"level":60,"time":1642879593050,"pid":659,"hostname":"b9d4ff1dfeab","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642880569749,"pid":1091,"hostname":"b9d4ff1dfeab","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642880828437,"pid":36,"hostname":"8c81cb8e3040","msg":"error: password authentication failed for user \"user\""}
+{"level":60,"time":1642881146824,"pid":36,"hostname":"2a62c4e26d05","msg":"error: password authentication failed for user \"user\""}
+{"level":60,"time":1642881497598,"pid":36,"hostname":"38e60e14b3a2","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642881747356,"pid":36,"hostname":"da3252623636","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642881981072,"pid":36,"hostname":"6deec23a6904","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642882685833,"pid":36,"hostname":"beebaf5c875c","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642883554896,"pid":36,"hostname":"a919dae5815c","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642883712373,"pid":36,"hostname":"5431fe2d79cf","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642884041695,"pid":36,"hostname":"394117dbf7ae","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642884891844,"pid":93,"hostname":"394117dbf7ae","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642946086320,"pid":36,"hostname":"262fd3dfe979","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642946375948,"pid":36,"hostname":"16cf89a3f578","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642948333266,"pid":477,"hostname":"2bfe382cc2e7","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":60,"time":1642948410598,"pid":497,"hostname":"2bfe382cc2e7","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":60,"time":1642948709369,"pid":653,"hostname":"2bfe382cc2e7","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642948859016,"pid":851,"hostname":"2bfe382cc2e7","msg":"TypeORMError: Entity metadata for User#tasks was not found. Check if you specified a correct entity object and if it's connected in the connection options."}
+{"level":60,"time":1642949061687,"pid":1052,"hostname":"2bfe382cc2e7","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":60,"time":1642950631629,"pid":35,"hostname":"6a6d2921bbce","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":60,"time":1642952019855,"pid":36,"hostname":"00c0b9024a17","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":60,"time":1642952933090,"pid":36,"hostname":"8ee5c94eaddf","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":60,"time":1642953047091,"pid":36,"hostname":"67b28f6a8db5","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":60,"time":1642953307513,"pid":36,"hostname":"cc8281ec9cb6","msg":"TypeORMError: Cannot find connection default because its not defined in any orm configuration files."}
+{"level":30,"time":1643049371046,"pid":141,"hostname":"f527bd168de1","msg":"Server listening at http://0.0.0.0:8000"}
+{"level":30,"time":1643049466081,"pid":35,"hostname":"3856dfbb28b1","msg":"Server listening at http://0.0.0.0:8000"}

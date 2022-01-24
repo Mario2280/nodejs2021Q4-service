@@ -1,29 +1,13 @@
-import Task, { ITask } from '../models/TaskModel';
-
-const Tasks: Array<Task> = [];
-
+import TaskConstructor, { ITask } from '../models/TaskModel';
+import { validate as isCorrectUuid } from "uuid";
+import { getRepository } from "typeorm";
+import Task from '../../entity/Board';
 /**
  *
  * @param id by which we filter {@link Tasks}
  * @param byUser Flag, false - filter by boardId, true - filter by userId
  * @returns void
  */
-const filterTasks = (id: string, byUser?: boolean) => {
-  if (byUser) {
-    for (let i = 0; i < Tasks.length; i += 1) {
-      if (Tasks[i].userId === id) {
-        Tasks[i].userId = null;
-      }
-    }
-  } else {
-    for (let i = 0; i < Tasks.length; i += 1) {
-      if (Tasks[i].boardId === id) {
-        Tasks.splice(i, 1);
-        i -= 1;
-      }
-    }
-  }
-};
 
 /**
  *
