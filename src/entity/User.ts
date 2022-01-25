@@ -12,7 +12,7 @@ export default class User {
     name: string;
 
     @Column({ unique: true })
-    login: number;
+    login: string;
 
     @Column({
         transformer: {

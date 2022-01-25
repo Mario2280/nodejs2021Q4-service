@@ -1,12 +1,20 @@
 /* eslint-disable max-classes-per-file */
-import { OneToMany, ManyToOne } from 'typeorm';
-import Content from './Content';
+import { Column, Entity, OneToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 // eslint-disable-next-line import/no-cycle
 import Task from './Task';
 // eslint-disable-next-line import/no-cycle
 import Board from './Board';
 
-export default class Column extends Content {
+@Entity()
+export default class Columns{
+    @PrimaryGeneratedColumn('uuid')
+    id:string;
+    
+    @Column()
+    title: string;
+
+    @Column()
+    order: number;
 
     @OneToMany(() => Task, task => task.column)
     tasks: Task[];

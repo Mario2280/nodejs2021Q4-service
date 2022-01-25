@@ -1,9 +1,10 @@
 /* eslint-disable import/no-cycle */
-import { Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import Task from './Task';
 import ColumnEntity from './Column';
 
 
+@Entity()
 export default class Board {
 
     @PrimaryGeneratedColumn('uuid')
@@ -12,7 +13,7 @@ export default class Board {
     @Column()
     title: string;
 
-    @Column()
+    @Column({array: true, type:'text'})
     @OneToMany(() => ColumnEntity, column => column.boardId, {onDelete:"CASCADE"})
     columns:ColumnEntity[];
 

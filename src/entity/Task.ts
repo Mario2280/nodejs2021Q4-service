@@ -1,11 +1,19 @@
 /* eslint-disable import/no-cycle */
-import { Column, ManyToOne, JoinColumn } from 'typeorm';
-import Content from './Content';
+import { Column, ManyToOne, JoinColumn, PrimaryGeneratedColumn, Entity } from 'typeorm';
 import User from './User';
 import Board from './Board';
 import ColumnEntity from './Column';
 
-export default class Task extends Content {
+@Entity()
+export default class Task {
+    @PrimaryGeneratedColumn('uuid')
+    id:string;
+    
+    @Column()
+    title: string;
+
+    @Column()
+    order: number;
 
     @Column()
     description: string;
