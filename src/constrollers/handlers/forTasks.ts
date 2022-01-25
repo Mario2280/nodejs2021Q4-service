@@ -22,10 +22,10 @@ type CustomRequest = FastifyRequest<{
  * @param res Default fastify response {@link FastifyReply}
  * @returns void
  */
-const taskPost = (req: CustomRequest, res: FastifyReply) => {
+const taskPost = async (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
   body.boardId = req.params.boardId;
-  res.code(201).send(postTask(body));
+  res.code(201).send(await postTask(body));
 };
 /**
  *
@@ -33,8 +33,8 @@ const taskPost = (req: CustomRequest, res: FastifyReply) => {
  * @param res Default fastify response {@link FastifyReply}
  * @returns void
  */
-const taskGet = (req: CustomRequest, res: FastifyReply) => {
-  const result = getTask(req.params.taskId);
+const taskGet = async (req: CustomRequest, res: FastifyReply) => {
+  const result = await getTask(req.params.taskId);
   if (!result) {
     res.code(404).send();
   } else {
@@ -47,8 +47,8 @@ const taskGet = (req: CustomRequest, res: FastifyReply) => {
  * @param res Default fastify response {@link FastifyReply}
  * @returns void
  */
-const taskGetAll = (req: FastifyRequest, res: FastifyReply) => {
-  res.send(getTasks());
+const taskGetAll = async (req: FastifyRequest, res: FastifyReply) => {
+  res.send(await getTasks());
 };
 /**
  *
@@ -56,9 +56,9 @@ const taskGetAll = (req: FastifyRequest, res: FastifyReply) => {
  * @param res Default fastify response {@link FastifyReply}
  * @returns void
  */
-const taskPut = (req: CustomRequest, res: FastifyReply) => {
+const taskPut = async (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
-  res.send(putTask(req.params.taskId, body));
+  res.send(await putTask(req.params.taskId, body));
 };
 /**
  *
@@ -66,8 +66,8 @@ const taskPut = (req: CustomRequest, res: FastifyReply) => {
  * @param res Default fastify response {@link FastifyReply}
  * @returns void
  */
-const taskDelete = (req: CustomRequest, res: FastifyReply) => {
-  const result = deleteTask(req.params.taskId);
+const taskDelete = async (req: CustomRequest, res: FastifyReply) => {
+  const result = await deleteTask(req.params.taskId);
   if (result) {
     res.code(200).send(result);
   } else {

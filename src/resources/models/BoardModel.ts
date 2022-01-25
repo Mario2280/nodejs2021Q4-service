@@ -24,7 +24,6 @@ class Board {
   constructor(obj: IBoard) {
     this.id = uuid.v4();
     this.title = obj.title;
-    this.order = obj.order;
   }
 
   /**

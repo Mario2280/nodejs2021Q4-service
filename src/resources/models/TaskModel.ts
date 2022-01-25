@@ -5,8 +5,8 @@ interface ITask {
   title: string;
   order: number;
   description: string;
-  userId: string | null;
-  columnId: string | null;
+  userId: string;
+  columnId: string;
   boardId: string;
 }
 
@@ -19,9 +19,9 @@ class Task {
 
   description: string;
 
-  userId: string | null;
+  userId: string;
 
-  columnId: string | null;
+  columnId: string;
 
   boardId: string;
 

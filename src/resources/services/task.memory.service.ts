@@ -1,7 +1,7 @@
-import TaskConstructor, { ITask } from '../models/TaskModel';
 import { validate as isCorrectUuid } from "uuid";
 import { getRepository } from "typeorm";
-import Task from '../../entity/Board';
+import TaskConstructor, { ITask } from '../models/TaskModel';
+import Task from '../../entity/Task';
 /**
  *
  * @param id by which we filter {@link Tasks}
@@ -13,19 +13,26 @@ import Task from '../../entity/Board';
  *
  * @returns Return all tasks which exist
  */
-const getTasks = () => Tasks;
+const getTasks = async (): Promise<Task[]> => {
+  const result = await getRepository(Task).find();
+  return result;
+};
 
 /**
  *
  * @param id Id requested task
  * @returns Return {@link ITask} or null, when task not found
  */
-const getTask = (id: string): ITask | null => {
-  const res = Tasks.find((val) => val.id === id);
-  if (res) {
-    return Task.toResponse(res);
+const getTask = async (id: string): Promise<Task | null> => {
+  if (isCorrectUuid(id)) {
+    const result = await getRepository(Task).findOne(id);
+    if (result instanceof Task) {
+      return result;
+    }
+    return null;
   }
   return null;
+  //return Error('Bad uuid');
 };
 
 /**
@@ -33,9 +40,14 @@ const getTask = (id: string): ITask | null => {
  * @param taskObj {@link ITask} obj without id
  * @returns Return created {@link ITask} obj
  */
-const postTask = (taskObj: ITask) => {
-  const newTask = new Task(taskObj);
-  Tasks.push(newTask);
+const postTask = async (taskObj: ITask): Promise<TaskConstructor> => {
+  const newTask = new TaskConstructor(taskObj);
+  await getRepository(Task)
+    .createQueryBuilder('task')
+    .insert()
+    .into(Task)
+    .values(newTask)
+    .execute();
   return newTask;
 };
 
@@ -45,42 +57,53 @@ const postTask = (taskObj: ITask) => {
  * @param taskObj New prop {@link ITask} of a task
  * @returns message success or error
  */
-const putTask = (id: string, taskObj: ITask): { message: string } => {
-  const res = Tasks.findIndex((value) => value.id === id);
-  if (res !== -1) {
-    Tasks[res].title = taskObj.title;
-    Tasks[res].order = taskObj.order;
-    Tasks[res].description = taskObj.description;
-    if (!taskObj.userId) {
-      Tasks[res].userId = null;
-    } else {
-      Tasks[res].userId = taskObj.userId;
+const putTask = async (id: string, taskObj: ITask): Promise<{ message:string}>=> {
+  if (taskObj instanceof TaskConstructor) {
+    await getRepository(Task)
+      .createQueryBuilder('task')
+      .update(Task)
+      .where('task.id = :id', { id })
+      .set(
+        {
+          title: taskObj.title,
+          description: taskObj.description,
+          order: taskObj.order,
+          userId: taskObj.userId,
+          columnId: taskObj.columnId,
+          boardId: taskObj.boardId
+        })
+      .execute();
+    const result = await getRepository(Task)
+      .createQueryBuilder('task')
+      .where("task.id = :id", { id })
+      .getOne();
+    if (result) {
+      return { message: `Task ${result.id} updated` };
     }
-    Tasks[res].boardId = taskObj.boardId;
-    if (!taskObj.userId) {
-      Tasks[res].columnId = null;
-    } else {
-      Tasks[res].columnId = taskObj.columnId;
-    }
-
-    return { message: `Task ${Tasks[res].id}updated` };
+    return { message: 'Task not found' };
   }
-  return { message: 'Task not found' };
-};
+  return { message: 'Task incorrect' };
+}
+
 
 /**
  *
  * @param id Id of the task which we want to delete
  * @returns Return deleted {@link ITask} obj or null, when task not found
  */
-const deleteTask = (id: string): null | ITask => {
-  const res = Tasks.findIndex((value) => value.id === id);
-  if (res !== -1) {
-    const returnMsg = Tasks[res];
-    Tasks.splice(res, 1);
-    return returnMsg;
+const deleteTask = async (id: string) => {
+  if(isCorrectUuid(id)){
+    const result = await getRepository(Task)
+    .createQueryBuilder('taskId')
+    .delete()
+    .from(Task)
+    .where('id = :id', {id})
+    .execute();
+    if(result){
+      return result;
+    }
   }
   return null;
 };
 
-export { Tasks, filterTasks, getTasks, getTask, postTask, putTask, deleteTask };
+export {  getTasks, getTask, postTask, putTask, deleteTask };

@@ -1,25 +1,33 @@
-import User, { IUser } from '../models/UserModel';
-import { filterTasks } from './task.memory.service';
+import { validate as isCorrectUuid } from "uuid";
+import { getRepository } from "typeorm";
+import User from '../../entity/User';
+import UserConstructor, { IUser } from '../models/UserModel';
 
-const Users: Array<User> = [];
+
 
 /**
  *
  * @returns Return all userss which exist
  */
-const getUsers = () => Users;
+const getUsers = async () => {
+  const result = await getRepository(User).find();
+  return result;
+};
 
 /**
  *
  * @param id Id requested user
  * @returns Return {@link IUser} without password or message, when task not found
  */
-const getUser = (id: string) => {
-  const res = Users.find((val) => val.id === id);
-  if (res) {
-    return User.toResponse(res);
+const getUser = async (id: string) => {
+  if(isCorrectUuid(id)){
+    const result = await getRepository(User).findOne(id);
+    if(result instanceof User){
+      return result;
+    }
+    return {message: 'User not found'}
   }
-  return { message: 'User not found' };
+  return {message: 'Incorrect uuid'};
 };
 
 /**
@@ -27,11 +35,15 @@ const getUser = (id: string) => {
  * @param objUser {@link IUser} obj without id
  * @returns Return created {@link IUser} obj without password
  */
-const postUser = (objUser: IUser) => {
-  const res = new User(objUser);
-  Users.push(res);
-
-  return User.toResponse(res);
+const postUser = async(objUser: IUser) => {
+  const newUser = new UserConstructor(objUser);
+  await getRepository(User)
+  .createQueryBuilder('user')
+  .insert()
+  .into(User)
+  .values(newUser)
+  .execute();
+  return newUser;
 };
 
 /**
@@ -40,16 +52,28 @@ const postUser = (objUser: IUser) => {
  * @param objUser New prop {@link IUser} of a user
  * @returns retrun error message or created user without password
  */
-const putUser = (objUser: IUser) => {
-  const { name, login, password, id } = objUser;
-  const res = Users.findIndex((value) => value.id === id);
-  if (res >= 0) {
-    Users[res].name = name;
-    Users[res].login = login;
-    Users[res].password = password;
-    return User.toResponse(Users[res]);
+const putUser = async (objUser: IUser) => {
+  if(objUser instanceof UserConstructor){
+    await getRepository(User)
+    .createQueryBuilder('user')
+    .update(User)
+    .where('user.id = :id', { id:objUser.id })
+    .set({
+      login: objUser.login,
+      name: objUser.name, 
+      password: objUser.password
+    })
+    .execute();
+    const result = await getRepository(User)
+    .createQueryBuilder('user')
+    .where('user.id = :id', { id:objUser.id})
+    .getOne();
+    if(result){
+      return result;
+    }
+    return { message: 'User not found' };
   }
-  return { message: 'User not found' };
+  return { message: "Incorrect user format"};
 };
 
 /**
@@ -57,14 +81,20 @@ const putUser = (objUser: IUser) => {
  * @param id Id of the user which we want to delete
  * @returns Return message success or error
  */
-const deleteUser = (id: string) => {
-  const res = Users.findIndex((value) => value.id === id);
-  if (res !== 0) {
-    filterTasks(id, true);
-    Users.splice(res, 1);
-    return { message: `User ${id} deleted` };
+const deleteUser = async (id: string) => {
+  if(isCorrectUuid(id)){
+    const result = await getRepository(User)
+    .createQueryBuilder('user')
+    .delete()
+    .from(User)
+    .where('user.id = :id', { id })
+    .execute();
+    if(result){
+      return { message: `User ${id} deleted` };
+    }
+    return { message: 'User not found' };
   }
-  return { message: 'User not found' };
+  return { message: 'Incorrect uuid' };
 };
 
 export { getUsers, getUser, postUser, putUser, deleteUser };
