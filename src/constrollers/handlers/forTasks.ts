@@ -38,7 +38,16 @@ const taskGet = async (req: CustomRequest, res: FastifyReply) => {
   if (!result) {
     res.code(404).send();
   } else {
-    res.code(200).header('Content-type', 'application/json').send(result);
+
+    res.code(200).header('Content-type', 'application/json').send({
+      title: result.title,
+      description: result.description,
+      order: result.order,
+      userId: result.userId,
+      boardId: result.boardId,
+      id: result.id,
+      columnId: result.columnId === '' ? null : result.columnId
+    });
   }
 };
 /**
