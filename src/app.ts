@@ -8,13 +8,6 @@ import Config from './common/config';
 const { LOG_MODE } = Config();
 config();
 
-
-
-
-
-
-
-
 const logger = {
     level: LOG_MODE,
     file: './log.txt',

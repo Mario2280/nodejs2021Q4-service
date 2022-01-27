@@ -59,7 +59,8 @@ const boardGetAll = async (req: FastifyRequest, res: FastifyReply) => {
  * @returns void
  */
 const boardPut = async (req: CustomRequest, res: FastifyReply) => {
-  const { body } = req;
+  const { body, params } = req;
+  Object.defineProperty(body, 'id', {value: params.boardId});
   res.send(await putBoard(body));
 };
 /**

@@ -33,21 +33,22 @@ const postBoard = async (board: IBoard): Promise<BoardConstructor> => {
 }
 
 const putBoard = async (board: IBoard): Promise<{ message: string}> => {
-  if (board instanceof BoardConstructor) {
+  if (Object.prototype.hasOwnProperty.call(board, 'title') ||
+  Object.prototype.hasOwnProperty.call(board, 'columns')
+  ) {
     await getRepository(Board)
       .createQueryBuilder("board")
       .update(Board)
-      .where('board.id = :id', { id: board.id })
-      .set({ title: board.title, columns: board.columns, })
+      .set(board)
+      .where('id = :id', { id: board.id })
       .execute();
     const result = await getRepository(Board)
       .createQueryBuilder("board")
-      .where("board.id = :id", { id: board.id })
+      .where("id = :id", { id: board.id })
       .getOne();
     return {message: `Board ${result?.id} updated`};
   }
   return {message: 'Incorrect board'}
-
 }
 
 const deleteBoard = async (id: string): Promise<{ message: string }> => {

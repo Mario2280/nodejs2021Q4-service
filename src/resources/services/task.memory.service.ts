@@ -2,6 +2,16 @@ import { validate as isCorrectUuid } from "uuid";
 import { getRepository } from "typeorm";
 import TaskConstructor, { ITask } from '../models/TaskModel';
 import Task from '../../entity/Task';
+
+interface PutTask {
+  title?: string;
+  order?: number;
+  description?: string;
+  userId?: string;
+  columnId?: string;
+  boardId?: string;
+}
+
 /**
  *
  * @param id by which we filter {@link Tasks}
@@ -42,12 +52,13 @@ const getTask = async (id: string): Promise<Task | null> => {
  */
 const postTask = async (taskObj: ITask): Promise<TaskConstructor> => {
   const newTask = new TaskConstructor(taskObj);
-  await getRepository(Task)
+  const result = await getRepository(Task)
     .createQueryBuilder('task')
     .insert()
     .into(Task)
     .values(newTask)
     .execute();
+    newTask.id = result.raw[0].id;
   return newTask;
 };
 
@@ -57,33 +68,39 @@ const postTask = async (taskObj: ITask): Promise<TaskConstructor> => {
  * @param taskObj New prop {@link ITask} of a task
  * @returns message success or error
  */
-const putTask = async (id: string, taskObj: ITask): Promise<{ message:string}>=> {
-  if (taskObj instanceof TaskConstructor) {
+const putTask = async (id: string, taskObj: ITask): Promise<{ message: string }> => {
+  const toPut : PutTask = {};
+  if (Object.prototype.hasOwnProperty.call(taskObj, 'title')){
+    toPut.title = taskObj.title
+  }
+  if (Object.prototype.hasOwnProperty.call(taskObj, 'description')){
+    toPut.description = taskObj.description
+  }
+  if (Object.prototype.hasOwnProperty.call(taskObj, 'order')){
+    toPut.order = taskObj.order
+  }
+  if (Object.prototype.hasOwnProperty.call(taskObj, 'columnId')){
+    toPut.columnId = taskObj.columnId
+  }
+  if (Object.prototype.hasOwnProperty.call(taskObj, 'boardId')){
+    toPut.boardId = taskObj.boardId
+  }    
     await getRepository(Task)
       .createQueryBuilder('task')
-      .update(Task)
-      .where('task.id = :id', { id })
-      .set(
-        {
-          title: taskObj.title,
-          description: taskObj.description,
-          order: taskObj.order,
-          userId: taskObj.userId,
-          columnId: taskObj.columnId,
-          boardId: taskObj.boardId
-        })
+      .update(Task) 
+      .set(toPut)
+      .where('id = :id', { id })
       .execute();
     const result = await getRepository(Task)
       .createQueryBuilder('task')
-      .where("task.id = :id", { id })
+      .where("id = :id", { id })
       .getOne();
     if (result) {
       return { message: `Task ${result.id} updated` };
     }
     return { message: 'Task not found' };
   }
-  return { message: 'Task incorrect' };
-}
+
 
 
 /**
@@ -92,18 +109,18 @@ const putTask = async (id: string, taskObj: ITask): Promise<{ message:string}>=>
  * @returns Return deleted {@link ITask} obj or null, when task not found
  */
 const deleteTask = async (id: string) => {
-  if(isCorrectUuid(id)){
+  if (isCorrectUuid(id)) {
     const result = await getRepository(Task)
-    .createQueryBuilder('taskId')
-    .delete()
-    .from(Task)
-    .where('id = :id', {id})
-    .execute();
-    if(result){
+      .createQueryBuilder('taskId')
+      .delete()
+      .from(Task)
+      .where('id = :id', { id })
+      .execute();
+    if (result) {
       return result;
     }
   }
   return null;
 };
 
-export {  getTasks, getTask, postTask, putTask, deleteTask };
+export { getTasks, getTask, postTask, putTask, deleteTask };

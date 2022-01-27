@@ -1,5 +1,3 @@
-import * as uuid from 'uuid';
-
 interface ITask {
   id?: string;
   title: string;
@@ -19,20 +17,25 @@ class Task {
 
   description: string;
 
-  userId: string;
+  userId?: string;
 
-  columnId: string;
+  columnId?: string;
 
-  boardId: string;
+  boardId?: string;
 
   constructor(obj: ITask) {
-    this.id = uuid.v4();
     this.title = obj.title;
     this.order = obj.order;
     this.description = obj.description;
-    this.userId = obj.userId;
-    this.columnId = obj.columnId;
-    this.boardId = obj.boardId;
+    if(Object.hasOwnProperty.call(obj, 'userId')){
+      this.userId = obj.userId;
+    }
+    if(Object.hasOwnProperty.call(obj, 'columnId')){
+      this.columnId = obj.columnId;
+    }
+    if(Object.hasOwnProperty.call(obj, 'boardId')){
+      this.boardId = obj.boardId;
+    }
   }
 
   /**

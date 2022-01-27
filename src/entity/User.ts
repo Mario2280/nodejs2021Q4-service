@@ -17,7 +17,7 @@ export default class User {
     @Column({
         transformer: {
             to: (value: string) => value,
-            from: () => ''
+            from: () => null
         }
     })
     password: string;

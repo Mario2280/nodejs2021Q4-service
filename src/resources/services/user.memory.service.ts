@@ -20,30 +20,37 @@ const getUsers = async () => {
  * @returns Return {@link IUser} without password or message, when task not found
  */
 const getUser = async (id: string) => {
-  if(isCorrectUuid(id)){
+  if (isCorrectUuid(id)) {
     const result = await getRepository(User).findOne(id);
-    if(result instanceof User){
-      return result;
-    }
-    return {message: 'User not found'}
+    if (result instanceof User) {
+      return {
+        name: result.name,
+        login: result.login,
+        id: result.id
+      };
+    };
+    return { message: 'User not found' }
   }
-  return {message: 'Incorrect uuid'};
-};
+  return { message: 'Incorrect uuid' };
+}
+
+
 
 /**
  *
  * @param objUser {@link IUser} obj without id
  * @returns Return created {@link IUser} obj without password
  */
-const postUser = async(objUser: IUser) => {
+const postUser = async (objUser: IUser) => {
   const newUser = new UserConstructor(objUser);
   await getRepository(User)
-  .createQueryBuilder('user')
-  .insert()
-  .into(User)
-  .values(newUser)
-  .execute();
-  return newUser;
+    .createQueryBuilder('user')
+    .insert()
+    .into(User)
+    .values(newUser)
+    .execute();
+  const result = await getRepository(User).findOne({ where: { login: objUser.login } });
+  return result;
 };
 
 /**
@@ -53,27 +60,29 @@ const postUser = async(objUser: IUser) => {
  * @returns retrun error message or created user without password
  */
 const putUser = async (objUser: IUser) => {
-  if(objUser instanceof UserConstructor){
+  if (Object.prototype.hasOwnProperty.call(objUser, 'password') &&
+    Object.prototype.hasOwnProperty.call(objUser, 'login') &&
+    Object.prototype.hasOwnProperty.call(objUser, 'name')) {
     await getRepository(User)
-    .createQueryBuilder('user')
-    .update(User)
-    .where('user.id = :id', { id:objUser.id })
-    .set({
-      login: objUser.login,
-      name: objUser.name, 
-      password: objUser.password
-    })
-    .execute();
+      .createQueryBuilder('user')
+      .update(User)
+      .where("id = :id", { id: objUser.id })
+      .set({
+        login: objUser.login,
+        name: objUser.name,
+        password: objUser.password
+      })
+      .execute();
     const result = await getRepository(User)
-    .createQueryBuilder('user')
-    .where('user.id = :id', { id:objUser.id})
-    .getOne();
-    if(result){
+      .createQueryBuilder('user')
+      .where('id = :id', { id: objUser.id })
+      .getOne();
+    if (result) {
       return result;
     }
     return { message: 'User not found' };
   }
-  return { message: "Incorrect user format"};
+  return { message: "Incorrect user format" };
 };
 
 /**
@@ -82,14 +91,14 @@ const putUser = async (objUser: IUser) => {
  * @returns Return message success or error
  */
 const deleteUser = async (id: string) => {
-  if(isCorrectUuid(id)){
+  if (isCorrectUuid(id)) {
     const result = await getRepository(User)
-    .createQueryBuilder('user')
-    .delete()
-    .from(User)
-    .where('user.id = :id', { id })
-    .execute();
-    if(result){
+      .createQueryBuilder('user')
+      .delete()
+      .from(User)
+      .where('id = :id', { id })
+      .execute()
+    if (result) {
       return { message: `User ${id} deleted` };
     }
     return { message: 'User not found' };

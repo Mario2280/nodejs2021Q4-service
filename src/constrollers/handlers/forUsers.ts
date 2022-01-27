@@ -24,7 +24,12 @@ const userPost = async (req: CustomRequest, res: FastifyReply) => {
   const { body } = req;
   res.code(201);
   res.header('Content-Type', 'application/json');
-  res.send(await postUser(body));
+  const result = await postUser(body);
+  res.send({
+    id: result?.id,
+    name: result?.name,
+    login:result?.login
+  });
 };
 /**
  *
@@ -34,7 +39,8 @@ const userPost = async (req: CustomRequest, res: FastifyReply) => {
  */
 const userGet = async (req: CustomRequest, res: FastifyReply) => {
   res.header('Content-Type', 'application/json');
-  res.send(await getUser(req.params.userId));
+  const result = await getUser(req.params.userId)
+  res.send(result);
 };
 /**
  *
@@ -54,7 +60,10 @@ const userGetAll = async (req: FastifyRequest, res: FastifyReply) => {
  * @returns void
  */
 const userPut = async (req: CustomRequest, res: FastifyReply) => {
-  const { body } = req;
+  const { body, params } = req;
+  Object.defineProperty(body, "id", {
+    value: params.userId
+  });
   res.header('Content-Type', 'application/json');
   res.code(200);
   res.send(await putUser(body));
@@ -66,7 +75,7 @@ const userPut = async (req: CustomRequest, res: FastifyReply) => {
  * @returns void
  */
 const userDelete = async (req: CustomRequest, res: FastifyReply) => {
-  res.send(await deleteUser(req.params.userId));
+  res.send(JSON.stringify(await deleteUser(req.params.userId)));
 };
 
 export = () => ({

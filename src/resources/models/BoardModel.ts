@@ -1,20 +1,16 @@
-import * as uuid from 'uuid';
-
 interface IColum {
-  id:string,
   title: string;
   order: number;
 }
 
 interface IBoard {
-  id: string;
+  id?: string;
   title: string;
   order: number;
   columns?: IColum[];
 }
 
 class Board {
-  id: string;
 
   title: string;
 
@@ -22,8 +18,8 @@ class Board {
   columns: Array<IColum> | undefined;
 
   constructor(obj: IBoard) {
-    this.id = uuid.v4();
     this.title = obj.title;
+    this.columns = obj.columns;
   }
 
   /**

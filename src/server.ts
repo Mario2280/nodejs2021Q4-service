@@ -5,7 +5,7 @@ import app from './app';
 
 config();
 
-const PORT = process.env.SERVER_PORT || 4000;
+const PORT = process.env.SERVER_PORT || 8000;
 
 
 

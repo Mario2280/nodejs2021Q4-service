@@ -1,9 +1,7 @@
-import * as uuid from 'uuid';
-
 interface IUser {
   id?: string;
   name: string;
-  login: number;
+  login: string;
   password: string;
 }
 
@@ -12,12 +10,11 @@ class User {
 
   name: string;
 
-  login: number;
+  login: string;
 
   password: string;
 
   constructor(userObj: IUser) {
-    this.id = uuid.v4();
     this.name = userObj.name;
     this.login = userObj.login;
     this.password = userObj.password;
@@ -32,7 +29,7 @@ class User {
   static toResponse(user: IUser): {
     id: string | undefined;
     name: string;
-    login: number;
+    login: string;
   } {
     const { id, name, login } = user;
     return { id, name, login };

@@ -2,7 +2,7 @@
 import { Column, ManyToOne, JoinColumn, PrimaryGeneratedColumn, Entity } from 'typeorm';
 import User from './User';
 import Board from './Board';
-import ColumnEntity from './Column';
+//import ColumnEntity from './Column';
 
 @Entity()
 export default class Task {
@@ -18,7 +18,7 @@ export default class Task {
     @Column()
     description: string;
 
-    @Column()
+    @Column({nullable: true})
     userId: string;
     
     @ManyToOne(() => User, users => users.tasks, { onDelete: 'SET NULL' })
@@ -30,9 +30,9 @@ export default class Task {
     @Column({ nullable: true })
     columnId: string;
 
-    @ManyToOne(() => ColumnEntity, column => column.tasks, { onDelete: 'SET NULL' })
-    @JoinColumn({name: 'columnId'})
-    column: ColumnEntity;
+    // @ManyToOne(() => ColumnEntity, column => column.tasks, { onDelete: 'SET NULL' })
+    // @JoinColumn({name: 'columnId'})
+    // column: ColumnEntity;
 
     
     @Column()
