@@ -10,6 +10,8 @@ const Routes = async (fastify: FastifyInstance) => {
 
   fastify.post('/users', user().postUserOpt);
 
+  fastify.post('/login',user().authUser)
+
   fastify.put('/users/:userId', user().putUserOpt);
 
   fastify.delete('/users/:userId', user().deleteUserOpt);

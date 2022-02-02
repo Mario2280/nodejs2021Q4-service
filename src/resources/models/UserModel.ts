@@ -1,3 +1,5 @@
+import bcrypt from "bcryptjs";
+
 interface IUser {
   id?: string;
   name: string;
@@ -17,7 +19,7 @@ class User {
   constructor(userObj: IUser) {
     this.name = userObj.name;
     this.login = userObj.login;
-    this.password = userObj.password;
+    this.password = bcrypt.hashSync(userObj.password, 7);
   }
 
   /**

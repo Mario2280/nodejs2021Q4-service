@@ -10,6 +10,28 @@ const user = {
   },
 };
 
+const forAuthUser = {
+  type: 'object',
+  properties: {
+    login: str,
+    password: str,
+  }
+}
+
+const authUserSchema = {
+  body: {
+    forAuthUser,
+  },
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        token: str,
+      }
+    }
+  }
+}
+
 const getUsersSchema = {
   response: {
     200: {
@@ -64,6 +86,7 @@ const deleteUserSchema = {
 };
 
 export = () => ({
+  authUserSchema,
   getUsersSchema,
   getUserSchema,
   postUserSchema,

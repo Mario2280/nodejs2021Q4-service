@@ -2,7 +2,6 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 // eslint-disable-next-line import/no-cycle
 import Task from './Task';
 
-
 @Entity()
 export default class User {
     @PrimaryGeneratedColumn('uuid')

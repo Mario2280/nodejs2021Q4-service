@@ -1,8 +1,10 @@
+import bcrypt from 'bcryptjs';
 import { validate as isCorrectUuid } from "uuid";
 import { getRepository } from "typeorm";
+import { config } from 'dotenv';
+import jwt from 'jsonwebtoken';
 import User from '../../entity/User';
 import UserConstructor, { IUser } from '../models/UserModel';
-
 
 
 /**
@@ -106,4 +108,31 @@ const deleteUser = async (id: string) => {
   return { message: 'Incorrect uuid' };
 };
 
-export { getUsers, getUser, postUser, putUser, deleteUser };
+const generateAccesstoken = (user: { id: string, login: string }) => {
+  const payload = {
+    userId: user.id,
+    login: user.login,
+  };
+  config();
+  return jwt.sign(payload, <string>process.env.JWT_SECRET_KEY);
+}
+
+const authUser = async (user: { login: string, password: string }): Promise<{ token: string } | string> => {
+  try {
+    const candidate = await getRepository(User).findOne({ where: { login: user.login } });
+    if (!candidate) {
+      return `User not found`;
+    }
+    const validePassword = bcrypt.compareSync(user.password, candidate.password);
+    if (!validePassword) {
+      return `Incorrect password`;
+    }
+    const accesstoken = generateAccesstoken({ id: candidate.id, login: candidate.login });
+    return { token: accesstoken };
+  } catch (error) {
+    return <string>error;
+  }
+
+}
+
+export { getUsers, getUser, postUser, putUser, deleteUser, authUser };

@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 import fastify from 'fastify';
-
+import accessRoute from './plugins/routeAccess';
 import router from './router/router';
 import Config from './common/config';
 
@@ -42,6 +42,8 @@ process.on('unhandledRejection', (e) => {
     process.exit(1);
 
 });
+
+app.register(accessRoute);
 
 app.register(router);
 

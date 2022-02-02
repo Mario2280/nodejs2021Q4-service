@@ -1,6 +1,11 @@
 import userHandler from '../constrollers/handlers/forUsers';
 import userSchema from '../constrollers/schemas/forUsers';
 
+const authUser = {
+  schema: userSchema().authUserSchema,
+  handler:userHandler().authorization,
+}
+
 const getUsersOpt = {
   schema: userSchema().getUsersSchema,
   handler: userHandler().userGetAll,
@@ -27,6 +32,7 @@ const deleteUserOpt = {
 };
 
 export = () => ({
+  authUser,
   getUsersOpt,
   getUserOpt,
   postUserOpt,
