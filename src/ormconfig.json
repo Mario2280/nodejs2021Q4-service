@@ -8,15 +8,11 @@
     "cache": false,
     "database": "postgres",
     "entities": [
-        "src/*.entity.ts"
+        "build/**/*.entity.js"
     ],
     "migrations": [
-        "migration/*.ts"
+        "build/**/migration/*.js"
     ],
-    "synchronize": true,
-    "migrationsRun": false,
-    "cli": {
-        "entitiesDir": "src/entity",
-        "migrationsDir": "src/migration"
-    }
+    "synchronize": false,
+    "migrationsRun": false
 }
